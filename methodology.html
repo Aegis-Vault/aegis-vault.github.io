@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Methodology - AegisVault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">AegisVault</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="methodology.html" class="active">Methodology</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Methodology Hero -->
+    <section class="methodology-hero">
+        <div class="container">
+            <h1>Audit Methodology</h1>
+            <p>A systematic approach to smart contract security</p>
+        </div>
+    </section>
+
+    <!-- Methodology Content -->
+    <section class="methodology-content">
+        <div class="container">
+            <div class="methodology-overview">
+                <h2>Our Security Review Process</h2>
+                <p>AegisVault follows a structured, thorough approach to smart contract auditing, designed to identify vulnerabilities before they can be exploited. Below is our methodology broken down by phase:</p>
+            </div>
+
+            <div class="methodology-phases">
+                <!-- Phase 1 -->
+                <div class="phase">
+                    <div class="phase-number">1</div>
+                    <div class="phase-content">
+                        <h3>Scoping & Setup</h3>
+                        <p>The foundation of every effective audit starts with clear scope definition and proper environment setup.</p>
+                        <div class="phase-details">
+                            <h4>Key Activities:</h4>
+                            <ul>
+                                <li>Define exact contract boundaries and dependencies</li>
+                                <li>Set up development environment with appropriate tools</li>
+                                <li>Establish test networks and conditions</li>
+                                <li>Document project specifications and intended behaviors</li>
+                            </ul>
+                            <h4>Deliverables:</h4>
+                            <ul>
+                                <li>Scope document with contract addresses/files</li>
+                                <li>Test environment confirmation</li>
+                                <li>Initial risk assessment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="phase">
+                    <div class="phase-number">2</div>
+                    <div class="phase-content">
+                        <h3>Automated Analysis</h3>
+                        <p>Leveraging industry-standard and custom tools to identify common vulnerabilities and code patterns.</p>
+                        <div class="phase-details">
+                            <h4>Tools Utilized:</h4>
+                            <ul>
+                                <li>Slither: Static analysis framework</li>
+                                <li>Mythril: Security analysis tool</li>
+                                <li>Echidna: Fuzzing test framework</li>
+                                <li>Custom scripts for project-specific issues</li>
+                            </ul>
+                            <h4>Vulnerability Categories:</h4>
+                            <ul>
+                                <li>Reentrancy vulnerabilities</li>
+                                <li>Integer overflow/underflow</li>
+                                <li>Access control issues</li>
+                                <li>Gas optimization problems</li>
+                                <li>Compiler version compatibility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="phase">
+                    <div class="phase-number">3</div>
+                    <div class="phase-content">
+                        <h3>Manual Code Review</h3>
+                        <p>Detailed line-by-line analysis of code logic, security patterns, and edge cases that automated tools may miss.</p>
+                        <div class="phase-details">
+                            <h4>Review Focus Areas:</h4>
+                            <ul>
+                                <li>Business logic vulnerabilities</li>
+                                <li>Cross-contract interaction risks</li>
+                                <li>Economic attack vectors</li>
+                                <li>Centralization and trust assumptions</li>
+                                <li>Error handling and edge cases</li>
+                            </ul>
+                            <h4>Methodology:</h4>
+                            <ul>
+                                <li>Control flow analysis</li>
+                                <li>Data flow tracking</li>
+                                <li>State manipulation testing</li>
+                                <li>Privilege escalation attempts</li>
+                                <li>Function-level security assessment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="phase">
+                    <div class="phase-number">4</div>
+                    <div class="phase-content">
+                        <h3>Test Case Development</h3>
+                        <p>Creating specific test scenarios to verify vulnerabilities and ensure contract behavior meets specifications.</p>
+                        <div class="phase-details">
+                            <h4>Testing Approaches:</h4>
+                            <ul>
+                                <li>Unit testing key functions</li>
+                                <li>Integration testing between contracts</li>
+                                <li>Exploit proof-of-concept development</li>
+                                <li>Validation of security assumptions</li>
+                            </ul>
+                            <h4>Frameworks:</h4>
+                            <ul>
+                                <li>Hardhat</li>
+                                <li>Foundry</li>
+                                <li>Truffle</li>
+                                <li>Custom testing environments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5 -->
+                <div class="phase">
+                    <div class="phase-number">5</div>
+                    <div class="phase-content">
+                        <h3>Reporting & Remediation</h3>
+                        <p>Detailed documentation of findings with clear remediation guidance and follow-up verification.</p>
+                        <div class="phase-details">
+                            <h4>Report Components:</h4>
+                            <ul>
+                                <li>Executive summary for stakeholders</li>
+                                <li>Detailed technical findings</li>
+                                <li>Severity classifications (Critical to Informational)</li>
+                                <li>Specific remediation recommendations</li>
+                                <li>Code examples for fixes where applicable</li>
+                            </ul>
+                            <h4>Post-Audit Process:</h4>
+                            <ul>
+                                <li>Developer consultation on findings</li>
+                                <li>Verification of implemented fixes</li>
+                                <li>Final security assessment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="severity-section">
+                <h2>Vulnerability Severity Classification</h2>
+                <p>We use a standardized severity classification system to help prioritize remediation efforts:</p>
+                
+                <div class="severity-levels">
+                    <div class="severity critical">
+                        <h4>Critical</h4>
+                        <p>Vulnerabilities that can lead to direct loss of funds, complete control takeover, or catastrophic protocol failure.</p>
+                    </div>
+                    
+                    <div class="severity high">
+                        <h4>High</h4>
+                        <p>Issues that could potentially lead to asset loss, significant protocol disruption, or serious vulnerabilities requiring complex exploitation.</p>
+                    </div>
+                    
+                    <div class="severity medium">
+                        <h4>Medium</h4>
+                        <p>Vulnerabilities that could cause limited financial damage, temporary protocol disruption, or vulnerabilities requiring specialized conditions.</p>
+                    </div>
+                    
+                    <div class="severity low">
+                        <h4>Low</h4>
+                        <p>Issues that represent best practice violations, minor optimizations, or theoretical vulnerabilities with minimal real-world impact.</p>
+                    </div>
+                    
+                    <div class="severity informational">
+                        <h4>Informational</h4>
+                        <p>Code improvements, documentation suggestions, and non-security-critical optimizations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sample-section">
+                <h2>Sample Report Structure</h2>
+                <div class="sample-report">
+                    <div class="report-section">
+                        <h4>1. Executive Summary</h4>
+                        <ul>
+                            <li>Audit scope and objectives</li>
+                            <li>Methodology overview</li>
+                            <li>Summary of findings by severity</li>
+                            <li>Overall security assessment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="report-section">
+                        <h4>2. Findings Detail</h4>
+                        <ul>
+                            <li>Individual vulnerability reports</li>
+                            <li>Severity classification</li>
+                            <li>Affected components</li>
+                            <li>Technical description</li>
+                            <li>Exploit scenario</li>
+                            <li>Recommended fixes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="report-section">
+                        <h4>3. Codebase Quality Assessment</h4>
+                        <ul>
+                            <li>Code structure evaluation</li>
+                            <li>Testing coverage</li>
+                            <li>Documentation quality</li>
+                            <li>Security best practices adherence</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="report-section">
+                        <h4>4. Verification Results</h4>
+                        <ul>
+                            <li>Fix implementation status</li>
+                            <li>Verification testing results</li>
+                            <li>Remaining concerns (if any)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Secure Your Smart Contracts?</h2>
+                <p>Contact us to discuss your project's security needs and how our methodology can be tailored to your specific requirements.</p>
+                <a href="index.html#contact" class="btn primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AegisVault</div>
+                <p class="tagline">Securing Web3, One Smart Contract at a Time</p>
+                <div class="social-links">
+                    <a href="https://github.com/Aegis-Vault"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 AegisVault. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
