@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Insights - AegisVault Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">AegisVault</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Security Insights</h1>
+            <p>Practical knowledge on Web3 security and smart contract vulnerabilities</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Article 1 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/800x450" alt="DeFi Vulnerabilities">
+                    </div>
+                    <div class="blog-details">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> April 12, 2025</span>
+                            <span class="blog-category">DeFi Security</span>
+                        </div>
+                        <h2 class="blog-title">Top 5 DeFi Vulnerabilities That Still Plague Protocols in 2025</h2>
+                        <p class="blog-excerpt">
+                            Despite years of exploits and security improvements, these five vulnerability patterns continue to cost DeFi users millions in lost funds. From Oracle manipulations to cross-contract interactions, learn how to identify and prevent these critical issues.
+                        </p>
+                        <a href="blog/defi-vulnerabilities.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/800x450" alt="Pre-Audit Checklist">
+                    </div>
+                    <div class="blog-details">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> April 5, 2025</span>
+                            <span class="blog-category">Security Checklists</span>
+                        </div>
+                        <h2 class="blog-title">The Smart Contract Developer's Pre-Audit Checklist</h2>
+                        <p class="blog-excerpt">
+                            A step-by-step guide to preparing your smart contracts for a professional audit. Covering common issues that can be fixed before paying for external review, this checklist will help you maximize the value of your security budget.
+                        </p>
+                        <a href="blog/pre-audit-checklist.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/800x450" alt="Reentrancy Attack Analysis">
+                    </div>
+                    <div class="blog-details">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> March 27, 2025</span>
+                            <span class="blog-category">Attack Analysis</span>
+                        </div>
+                        <h2 class="blog-title">Anatomy of a Reentrancy Attack: Beyond the Basics</h2>
+                        <p class="blog-excerpt">
+                            Everyone knows about the basic reentrancy pattern, but modern variants are more subtle and dangerous. This deep dive analyzes recent exploits and shows how cross-function reentrancy continues to bypass common defenses.
+                        </p>
+                        <a href="blog/reentrancy-attack-analysis.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="newsletter-signup">
+                <h2>Stay Updated on Web3 Security</h2>
+                <p>Subscribe to receive security alerts, vulnerability breakdowns, and practical tips.</p>
+                <form id="newsletterForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                    <div class="newsletter-form">
+                        <input type="email" name="email" placeholder="Your email address" required>
+                        <input type="hidden" name="form-name" value="newsletter">
+                        <button type="submit" class="btn primary">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- First Full Blog Post -->
+    <section class="sample-post">
+        <div class="container">
+            <h2 class="section-title">Featured Article</h2>
+            <div class="post-content">
+                <h2>The Smart Contract Developer's Pre-Audit Checklist</h2>
+                
+                <p class="post-meta">
+                    <span class="post-date"><i class="far fa-calendar-alt"></i> April 5, 2025</span>
+                    <span class="post-author"><i class="far fa-user"></i> AegisVault</span>
+                    <span class="post-category"><i class="far fa-folder"></i> Security Checklists</span>
+                </p>
+                
+                <div class="post-intro">
+                    <p>
+                        Before spending thousands of dollars on a professional smart contract audit, take the time to eliminate common issues that can be identified and fixed internally. This checklist will help you prepare your contracts for external review, maximizing the value you get from professional auditors by allowing them to focus on complex vulnerabilities rather than common mistakes.
+                    </p>
+                </div>
+                
+                <h3>1. Access Control Verification</h3>
+                <p>
+                    Start by confirming that all privileged functions have appropriate access controls:
+                </p>
+                <ul>
+                    <li>All admin functions have proper permission checks</li>
+                    <li>Ownership transfer functions implement a two-step process</li>
+                    <li>Multi-signature requirements are in place for critical operations</li>
+                    <li>Role-based permissions follow principle of least privilege</li>
+                </ul>
+                <p>
+                    <strong>Quick test:</strong> Create a script that attempts to call each privileged function from an unauthorized address and verify it reverts with the expected error message.
+                </p>
+                
+                <h3>2. Input Validation</h3>
+                <p>
+                    Check that all external and public functions validate inputs appropriately:
+                </p>
+                <ul>
+                    <li>Zero-address checks for critical address parameters</li>
+                    <li>Range validation for numeric inputs</li>
+                    <li>Array length validation to prevent gas limit issues</li>
+                    <li>Proper decimal/precision handling for financial calculations</li>
+                </ul>
+
+                <div class="code-example">
+                    <h4>Example: Proper Input Validation</h4>
+                    <pre><code>
+function transferTokens(address recipient, uint256 amount) external {
+    // Zero address check
+    require(recipient != address(0), "Cannot transfer to zero address");
+    
+    // Amount validation
+    require(amount > 0, "Amount must be greater than zero");
+    require(amount <= balances[msg.sender], "Insufficient balance");
+    
+    // Transfer logic...
+}
+                    </code></pre>
+                </div>
+                
+                <div class="callout-box">
+                    <h4><i class="fas fa-lightbulb"></i> Pro Tip</h4>
+                    <p>
+                        Create a reusable library of validation modifiers that can be consistently applied across your codebase to ensure uniform input handling.
+                    </p>
+                </div>
+                
+                <a href="blog/pre-audit-checklist.html" class="btn primary">Read Full Article</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AegisVault</div>
+                <p class="tagline">Securing Web3, One Smart Contract at a Time</p>
+                <div class="social-links">
+                    <a href="https://github.com/Aegis-Vault"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 AegisVault. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
