@@ -98,42 +98,148 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title">Security Portfolio</h2>
-            <div class="case-study">
-                <h3>Squeeth Protocol Security Analysis</h3>
-                <div class="tags">
-                    <span class="tag">DeFi</span>
-                    <span class="tag">ETH²</span>
-                    <span class="tag">Uniswap</span>
-                </div>
-                <p class="case-description">
-                    Conducted comprehensive security review of Squeeth, a complex power perpetual protocol offering ETH² exposure.
-                </p>
-                <div class="findings">
-                    <h4>Key Findings:</h4>
-                    <ul>
-                        <li><strong>Reentrancy Risks</strong>: Identified 17 potential reentrancy vectors in ETH-handling functions</li>
-                        <li><strong>Oracle Manipulation</strong>: Discovered potential TWAP manipulation vulnerability with 420-second window</li>
-                        <li><strong>Mathematical Precision</strong>: Highlighted precision loss risks in ETH² calculations</li>
-                        <li><strong>Access Control</strong>: Flagged centralization concerns in privileged system functions</li>
-                    </ul>
-                </div>
-                <div class="methodology">
-                    <h4>Methodology:</h4>
-                    <p>Combined automated analysis with manual code review, focusing on:</p>
-                    <ul>
-                        <li>Static pattern analysis for common vulnerabilities</li>
-                        <li>Function-level security assessment</li>
-                        <li>Cross-contract interaction verification</li>
-                        <li>Economic security considerations</li>
-                    </ul>
-                </div>
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <h2 class="section-title">Security Portfolio</h2>
+        <p class="portfolio-intro">
+            Selected security reviews and analyses demonstrating my methodical approach to smart contract vulnerabilities.
+        </p>
+        
+        <!-- Case Study 1: Squeeth -->
+        <div class="case-study">
+            <h3>Squeeth Protocol Security Analysis</h3>
+            <div class="tags">
+                <span class="tag">DeFi</span>
+                <span class="tag">ETH²</span>
+                <span class="tag">Uniswap</span>
             </div>
-            <!-- Additional case studies would go here -->
+            <p class="case-description">
+                Conducted comprehensive security review of Squeeth, a complex power perpetual protocol offering ETH² exposure.
+            </p>
+            <div class="findings">
+                <h4>Key Findings:</h4>
+                <ul>
+                    <li><strong>Reentrancy Risks</strong>: Identified 17 potential reentrancy vectors in ETH-handling functions</li>
+                    <li><strong>Oracle Manipulation</strong>: Discovered potential TWAP manipulation vulnerability with 420-second window</li>
+                    <li><strong>Mathematical Precision</strong>: Highlighted precision loss risks in ETH² calculations</li>
+                    <li><strong>Access Control</strong>: Flagged centralization concerns in privileged system functions</li>
+                </ul>
+            </div>
+            <div class="methodology">
+                <h4>Methodology:</h4>
+                <p>Combined automated analysis with manual code review, focusing on:</p>
+                <ul>
+                    <li>Static pattern analysis for common vulnerabilities</li>
+                    <li>Function-level security assessment</li>
+                    <li>Cross-contract interaction verification</li>
+                    <li>Economic security considerations</li>
+                </ul>
+            </div>
         </div>
-    </section>
+        
+        <!-- Case Study 2: DeFiSaver -->
+        <div class="case-study">
+            <h3>DeFiSaver v3 Protocol Security Review</h3>
+            <div class="tags">
+                <span class="tag">DeFi</span>
+                <span class="tag">Position Management</span>
+                <span class="tag">Multi-Protocol</span>
+            </div>
+            <p class="case-description">
+                Analyzed DeFiSaver v3's smart contract architecture with focus on cross-protocol interactions and liquidation protection mechanisms.
+            </p>
+            <div class="findings">
+                <h4>Key Findings:</h4>
+                <ul>
+                    <li><strong>Proxy Implementation</strong>: Discovered potential vulnerabilities in proxy upgrade pattern</li>
+                    <li><strong>Flash Loan Attack Surface</strong>: Identified potential oracle manipulation risks during refinancing operations</li>
+                    <li><strong>Access Controls</strong>: Recommended improvements to user permission management</li>
+                    <li><strong>Gas Optimization</strong>: Provided multiple optimization strategies for high-frequency functions</li>
+                </ul>
+            </div>
+            <div class="methodology">
+                <h4>Methodology:</h4>
+                <p>Security review conducted through multi-phase approach:</p>
+                <ul>
+                    <li>Slither automated analysis</li>
+                    <li>Manual review of critical liquidation protection logic</li>
+                    <li>Cross-contract interaction analysis</li>
+                    <li>Attack scenario simulation</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Case Study 3: Spectra Core -->
+        <div class="case-study">
+            <h3>Spectra Core Protocol Vulnerability Assessment</h3>
+            <div class="tags">
+                <span class="tag">DEX</span>
+                <span class="tag">AMM</span>
+                <span class="tag">Liquidity Pools</span>
+            </div>
+            <p class="case-description">
+                Performed comprehensive security assessment of Spectra Core, focusing on novel AMM mechanisms and liquidity provider protection.
+            </p>
+            <div class="findings">
+                <h4>Key Findings:</h4>
+                <ul>
+                    <li><strong>Slippage Manipulation</strong>: Identified potential MEV attack vectors in pool rebalancing mechanisms</li>
+                    <li><strong>Liquidity Lock Vulnerabilities</strong>: Discovered critical issues in timelock contract implementation</li>
+                    <li><strong>Precision Handling</strong>: Recommended fixes for decimal handling in fee calculations</li>
+                    <li><strong>Emergency Controls</strong>: Proposed improved circuit breaker design for market volatility protection</li>
+                </ul>
+            </div>
+            <div class="methodology">
+                <h4>Methodology:</h4>
+                <p>Security analysis combining automated and manual techniques:</p>
+                <ul>
+                    <li>Symbolic execution using Mythril</li>
+                    <li>Custom test scenarios in Foundry</li>
+                    <li>Economic attack vector modeling</li>
+                    <li>Security pattern analysis</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Case Study 4: Dual Defense -->
+        <div class="case-study">
+            <h3>Hacken Dual Defense Security Implementation</h3>
+            <div class="tags">
+                <span class="tag">Security Infrastructure</span>
+                <span class="tag">Multi-sig</span>
+                <span class="tag">Timelock</span>
+            </div>
+            <p class="case-description">
+                Collaborated on the security architecture for a defensive multi-layer governance and treasury protection system.
+            </p>
+            <div class="findings">
+                <h4>Contributions:</h4>
+                <ul>
+                    <li><strong>Multi-sig Design</strong>: Developed robust multi-signature implementation with threshold adjustment mechanisms</li>
+                    <li><strong>Timelock Security</strong>: Improved timelock contracts with advanced cancellation rights and monitoring</li>
+                    <li><strong>Emergency Response</strong>: Created protocol pause mechanisms with graduated authorization levels</li>
+                    <li><strong>Monitoring Tools</strong>: Implemented on-chain monitoring for suspicious transaction patterns</li>
+                </ul>
+            </div>
+            <div class="methodology">
+                <h4>Security Principles Applied:</h4>
+                <ul>
+                    <li>Defense in depth strategy</li>
+                    <li>Principle of least privilege</li>
+                    <li>Failure mode analysis</li>
+                    <li>Recovery mechanism design</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Portfolio Call to Action -->
+        <div class="portfolio-cta">
+            <h3>Need a Comprehensive Security Review?</h3>
+            <p>I provide detailed security assessments tailored to your protocol's specific needs and risk profile.</p>
+            <a href="#contact" class="btn primary">Discuss Your Project</a>
+        </div>
+    </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="about">
