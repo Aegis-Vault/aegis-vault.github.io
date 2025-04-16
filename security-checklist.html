@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Contract Security Checklist - AegisVault</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #4361ee;
+            --accent-color: #f72585;
+            --dark-color: #1a1b25;
+            --gray-color: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+        }
+        
+        .brand {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            color: var(--gray-color);
+        }
+        
+        .introduction {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .introduction p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .checklist-section {
+            margin-bottom: 40px;
+        }
+        
+        .checklist-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .checklist-item {
+            margin-bottom: 20px;
+        }
+        
+        .checklist-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist-item h3::before {
+            content: '□';
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .checklist-item p {
+            margin-bottom: 10px;
+            margin-left: 30px;
+        }
+        
+        .checklist-item ul {
+            margin-left: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .checklist-item li {
+            margin-bottom: 5px;
+        }
+        
+        .code-example {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0 15px 30px;
+            font-family: monospace;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        
+        .note {
+            background-color: rgba(67, 97, 238, 0.1);
+            border-left: 3px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0 15px 30px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning {
+            background-color: rgba(247, 37, 133, 0.1);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px;
+            margin: 15px 0 15px 30px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .footer p {
+            font-size: 0.95rem;
+            color: var(--gray-color);
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .checklist-item h3::before {
+                content: '□';
+                border: 1px solid #000;
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand">
+            <div class="brand-name">AegisVault</div>
+            <div class="tagline">Securing Web3, One Smart Contract at a Time</div>
+        </div>
+        
+        <div class="header">
+            <h1>Smart Contract Security Checklist</h1>
+            <p>A pre-audit verification process for DeFi developers</p>
+        </div>
+        
+        <div class="introduction">
+            <p>This checklist helps teams identify and fix common security issues before submitting their smart contracts for professional audit. By addressing these items first, you'll get more value from your security review and avoid common pitfalls that lead to exploits.</p>
+            <p>Use this document as a guide during your development process. Check off each item as you verify it in your codebase.</p>
+        </div>
+        
+        <!-- Access Control Section -->
+        <div class="checklist-section">
+            <h2>1. Access Control</h2>
+            
+            <div class="checklist-item">
+                <h3>Implement proper permission checks on all privileged functions</h3>
+                <p>Ensure that all administrative or privileged functions have appropriate access control modifiers that limit execution to authorized addresses.</p>
+                <div class="code-example">
+// Bad
+function withdrawFunds(uint256 amount) external {
+    // No access control!
+    payable(msg.sender).transfer(amount);
+}
+
+// Good
+function withdrawFunds(uint256 amount) external onlyOwner {
+    payable(msg.sender).transfer(amount);
+}</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Use two-step ownership transfer pattern</h3>
+                <p>Implement a two-step process for transferring ownership to prevent accidental transfers to incorrect addresses.</p>
+                <div class="code-example">
+// Two-step ownership transfer
+function transferOwnership(address newOwner) public onlyOwner {
+    pendingOwner = newOwner;
+}
+
+function acceptOwnership() public {
+    require(msg.sender == pendingOwner, "Not pending owner");
+    emit OwnershipTransferred(owner, pendingOwner);
+    owner = pendingOwner;
+    pendingOwner = address(0);
+}</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Implement role-based access control for complex permissions</h3>
+                <p>For contracts with multiple privileged operations, use granular role-based permissions rather than a single "owner" role.</p>
+                <div class="note">Consider using OpenZeppelin's AccessControl library for standardized role management.</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Verify no backdoors or bypass mechanisms exist</h3>
+                <p>Ensure there are no alternate execution paths that could bypass access control checks.</p>
+            </div>
+        </div>
+        
+        <!-- Input Validation Section -->
+        <div class="checklist-section">
+            <h2>2. Input Validation</h2>
+            
+            <div class="checklist-item">
+                <h3>Check for zero address validation</h3>
+                <p>Validate that critical address parameters cannot be set to the zero address (0x0).</p>
+                <div class="code-example">
+function setTreasury(address _treasury) external onlyOwner {
+    require(_treasury != address(0), "Zero address not allowed");
+    treasury = _treasury;
+}</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Implement bounds checking on numerical inputs</h3>
+                <p>Ensure that numeric inputs are within acceptable ranges to prevent unexpected behavior.</p>
+                <div class="code-example">
+function setFee(uint256 _fee) external onlyOwner {
+    require(_fee <= MAX_FEE, "Fee exceeds maximum");
+    fee = _fee;
+}</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Validate array inputs to prevent gas limit issues</h3>
+                <p>When accepting arrays as input, consider limiting their length to prevent gas limit errors.</p>
+                <div class="code-example">
+function batchTransfer(address[] calldata recipients, uint256[] calldata amounts) external {
+    require(recipients.length == amounts.length, "Arrays must be same length");
+    require(recipients.length <= MAX_BATCH_SIZE, "Batch too large");
+    
+    // Transfer logic
+}</div>
+            </div>
+        </div>
+        
+        <!-- Reentrancy Section -->
+        <div class="checklist-section">
+            <h2>3. Reentrancy Protection</h2>
+            
+            <div class="checklist-item">
+                <h3>Follow CEI (Checks-Effects-Interactions) pattern</h3>
+                <p>Structure functions to perform all checks first, then state changes, and external calls last.</p>
+                <div class="code-example">
+// Good: Follows CEI pattern
+function withdraw(uint256 amount) external {
+    // Checks
+    require(balances[msg.sender] >= amount, "Insufficient balance");
+    
+    // Effects
+    balances[msg.sender] -= amount;
+    
+    // Interactions
+    (bool success, ) = msg.sender.call{value: amount}("");
+    require(success, "Transfer failed");
+}</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Use reentrancy guards on functions that make external calls</h3>
+                <p>Apply reentrancy protection modifiers to functions that transfer ETH or interact with external contracts.</p>
+                <div class="code-example">
+// Using OpenZeppelin's ReentrancyGuard
+function withdraw(uint256 amount) external nonReentrant {
+    require(balances[msg.sender] >= amount, "Insufficient balance");
+    balances[msg.sender] -= amount;
+    (bool success, ) = msg.sender.call{value: amount}("");
+    require(success, "Transfer failed");
+}</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Check for cross-function reentrancy vulnerabilities</h3>
+                <p>Verify that state changes in one function cannot be exploited via reentry through another function.</p>
+                <div class="warning">Remember that reentrancy guards only protect the function they're applied to. Consider how functions sharing state might interact during reentrancy.</div>
+            </div>
+        </div>
+        
+        <!-- Arithmetic Section -->
+        <div class="checklist-section">
+            <h2>4. Arithmetic Safety</h2>
+            
+            <div class="checklist-item">
+                <h3>Use SafeMath or Solidity 0.8.x for overflow/underflow protection</h3>
+                <p>Ensure all arithmetic operations are protected against overflow and underflow vulnerabilities.</p>
+                <div class="note">If using Solidity 0.8.0 or higher, overflow/underflow checks are built-in. For earlier versions, use a library like SafeMath.</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Be cautious with division and modulo operations</h3>
+                <p>Check for division by zero and verify rounding behavior meets expectations.</p>
+                <div class="code-example">
+// Check for division by zero
+require(denominator > 0, "Cannot divide by zero");
+uint256 result = (numerator * PRECISION) / denominator;</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Verify order of operations in complex calculations</h3>
+                <p>Ensure complex formulas maintain proper precision and follow the intended order of operations.</p>
+                <div class="code-example">
+// Bad: Loss of precision
+uint256 result = amount / 100 * tax;
+
+// Good: Maintain precision
+uint256 result = amount * tax / 100;</div>
+            </div>
+        </div>
+        
+        <!-- External Interactions Section -->
+        <div class="checklist-section">
+            <h2>5. External Interactions</h2>
+            
+            <div class="checklist-item">
+                <h3>Check return values from external calls</h3>
+                <p>Always check the return values of low-level calls to ensure they executed successfully.</p>
+                <div class="code-example">
+(bool success, ) = address(token).call(
+    abi.encodeWithSignature("transfer(address,uint256)", recipient, amount)
+);
+require(success, "Transfer failed");</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Implement pull-over-push pattern for value distribution</h3>
+                <p>When distributing funds to multiple recipients, use a pull pattern (where users claim funds) rather than a push pattern (where the contract sends funds).</p>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Be cautious with delegatecall</h3>
+                <p>If using delegatecall, ensure the target contract is trusted and cannot be manipulated to perform unauthorized operations.</p>
+                <div class="warning">delegatecall executes code in the context of the calling contract. This means the target contract can modify your contract's storage.</div>
+            </div>
+        </div>
+        
+        <!-- Oracle Security Section -->
+        <div class="checklist-section">
+            <h2>6. Oracle Usage</h2>
+            
+            <div class="checklist-item">
+                <h3>Use time-weighted average prices (TWAP) rather than spot prices</h3>
+                <p>When getting price data from oracles, use time-weighted averages to prevent flash loan attacks.</p>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Implement circuit breakers for extreme price movements</h3>
+                <p>Add safeguards against extreme price changes that could indicate oracle manipulation.</p>
+                <div class="code-example">
+uint256 previousPrice = lastPrice;
+uint256 newPrice = oracle.getPrice(token);
+
+// Check if price change exceeds threshold
+uint256 priceDelta = previousPrice > newPrice ? 
+    previousPrice - newPrice : newPrice - previousPrice;
+    
+uint256 changePercentage = (priceDelta * 100) / previousPrice;
+require(changePercentage <= MAX_PRICE_CHANGE_PERCENT, "Price change too large");</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Consider using multiple data sources</h3>
+                <p>If feasible, obtain price data from multiple oracles and use median or other aggregation methods.</p>
+            </div>
+        </div>
+        
+        <!-- Gas Optimization Section -->
+        <div class="checklist-section">
+            <h2>7. Gas Optimization</h2>
+            
+            <div class="checklist-item">
+                <h3>Use packed storage where possible</h3>
+                <p>Group smaller variables together to use fewer storage slots.</p>
+                <div class="code-example">
+// Bad: Uses 3 storage slots
+uint256 value1;
+uint8 value2;
+uint8 value3;
+
+// Good: Uses 1 storage slot
+uint8 value2;
+uint8 value3;
+uint256 value1;</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Avoid unnecessary storage updates</h3>
+                <p>Only update storage variables when their values actually change.</p>
+                <div class="code-example">
+// Bad: Unnecessary storage write
+function setValue(uint256 newValue) external onlyOwner {
+    value = newValue;
+}
+
+// Good: Only write if value changes
+function setValue(uint256 newValue) external onlyOwner {
+    if (value != newValue) {
+        value = newValue;
+    }
+}</div>
+            </div>
+            
+            <div class="checklist-item">
+                <h3>Optimize loops to prevent gas limit errors</h3>
+                <p>Ensure loops have a bounded number of iterations or implement pagination patterns for large datasets.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 AegisVault. This document may be freely used and distributed.</p>
+            <p>For professional smart contract audits, visit <a href="https://aegis-vault.github.io">aegis-vault.github.io</a></p>
+        </div>
+    </div>
+</body>
+</html>
