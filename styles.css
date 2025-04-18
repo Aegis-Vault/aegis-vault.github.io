@@ -102,6 +102,25 @@ nav .container {
     transition: all 0.3s ease;
 }
 
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: #1a1b25;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .nav-links.active {
+        right: 0;
+    }
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -207,12 +226,12 @@ section {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(255,26,117,0.3);
     animation: cyberPulse 2s infinite;
 }
 
@@ -226,6 +245,20 @@ section {
         var(--primary-color) 100%);
     z-index: -1;
     animation: borderGlow 3s linear infinite;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 20%, 
+        rgba(255,26,117,0.1) 50%, 
+        transparent 80%);
+    animation: shine 3s infinite;
 }
 
 .service-icon {
@@ -1084,4 +1117,15 @@ footer {
 @keyframes borderGlow {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
+}
+
+/* Animation Additions */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
 }

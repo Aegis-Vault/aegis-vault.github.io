@@ -2,23 +2,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
     const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+    const navLinks = document.querySelector('.nav-links');
 
     burger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('nav-active');
-        
-        // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
-        });
-        
-        // Burger Animation
+        navLinks.classList.toggle('active');
         burger.classList.toggle('toggle');
     });
 
@@ -35,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 
                 // Close mobile menu if open
-                if (nav.classList.contains('nav-active')) {
-                    nav.classList.remove('nav-active');
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
                     burger.classList.remove('toggle');
                 }
             }
@@ -66,6 +53,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     updateActiveNav();
+
+    // Animated Counters
+    const counters = document.querySelectorAll('[data-count]');
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-count');
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                counter.textContent = Math.ceil(current);
+                setTimeout(updateCounter, 25);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        updateCounter();
+    });
+
+    // Testimonial Carousel
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    
+    setInterval(() => {
+        testimonials[currentTestimonial].classList.remove('active');
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        testimonials[currentTestimonial].classList.add('active');
+    }, 5000);
+
+    // Initialize Animations
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
 
     // Security Dashboard Counter Animation
     setupCounterAnimations();
