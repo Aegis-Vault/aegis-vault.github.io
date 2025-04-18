@@ -1,4 +1,6 @@
 // script.js
+import { io } from 'socket.io-client';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
     const burger = document.querySelector('.burger');
@@ -309,4 +311,19 @@ document.addEventListener('DOMContentLoaded', () => {
             thanksSection.style.display = 'block';
         }
     }
+
+    // 6. CHAT FUNCTIONALITY
+    const socket = io('https://your-backend-domain.com'); // Replace with your backend URL
+
+    // Send a message
+    document.getElementById('sendBtn').addEventListener('click', () => {
+        const message = document.getElementById('messageInput').value;
+        socket.emit('chat_message', message);
+    });
+
+    // Receive a message
+    socket.on('chat_message', (msg) => {
+        const chatBox = document.getElementById('chatBox');
+        chatBox.innerHTML += `<p>${msg}</p>`;
+    });
 });

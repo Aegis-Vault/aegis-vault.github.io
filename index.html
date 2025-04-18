@@ -448,6 +448,17 @@
         </div>
     </div>
 </section>
+
+<!-- Chat Section -->
+<section id="chat">
+    <div class="chat-container">
+        <div id="chatBox" class="chat-box"></div>
+        <form id="chatForm">
+            <input type="text" id="messageInput" placeholder="Type your message..." required>
+            <button type="submit" id="sendBtn">Send</button>
+        </form>
+    </div>
+</section>
     
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -538,6 +549,7 @@
     </div>
 </footer>
 
+    <script src="https://cdn.socket.io/4.5.1/socket.io.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

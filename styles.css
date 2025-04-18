@@ -1594,3 +1594,50 @@ footer {
     animation: spin 1s ease-in-out infinite;
     margin-right: 8px;
 }
+
+#chat {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+#chatForm {
+    display: flex;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+#sendBtn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4361ee;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#sendBtn:hover {
+    background-color: #3651c9;
+}
