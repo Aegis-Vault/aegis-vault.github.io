@@ -1546,3 +1546,21 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.form-message {
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.form-message-success {
+    background-color: rgba(46, 204, 113, 0.1);
+    border-left: 4px solid #2ecc71;
+    color: #2ecc71;
+}
+
+.form-message-error {
+    background-color: rgba(231, 76, 60, 0.1);
+    border-left: 4px solid #e74c3c;
+    color: #e74c3c;
+}
