@@ -80,19 +80,20 @@
                 </ul>
                 <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
             </div>
-            <div class="scan-form">
-                <form id="scanForm">
-                    <div class="form-group">
-                        <label for="scan-email">Email</label>
-                        <input type="email" id="scan-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contract-code">Contract Code or GitHub URL</label>
-                        <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Run Free Scan</button>
-                </form>
-            </div>
+           <div class="scan-form">
+    <form id="scanForm" onsubmit="handleScanSubmit(event)">
+        <div class="form-group">
+            <label for="scan-email">Email</label>
+            <input type="email" id="scan-email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="contract-code">Contract Code or GitHub URL</label>
+            <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
+        </div>
+        <button type="submit" class="btn primary">Run Free Scan</button>
+        <div id="scan-message" class="form-message" style="display: none;"></div>
+    </form>
+</div>
         </div>
     </div>
 </section>
