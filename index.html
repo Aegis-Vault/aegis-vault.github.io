@@ -80,40 +80,37 @@
                 </ul>
                 <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
             </div>
-         <div class="scan-form">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
-            <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! 
+            <div class="scan-form">
+                <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
+                    <!-- Hidden fields for FormSubmit configuration -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
+                    <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! 
 
-            We've received your submission and our automated scanning tools are now analyzing your contract for potential vulnerabilities and optimization opportunities.
+We've received your submission and our automated scanning tools are now analyzing your contract for potential vulnerabilities and optimization opportunities.
 
-            What to expect next:
-            1. Within 24 hours, you'll receive a basic security report highlighting any identified issues
-            2. The report will include severity ratings and brief explanations of potential vulnerabilities
-            3. For critical issues, we'll provide general recommendations on how to address them
+What to expect next:
+1. Within 24 hours, you'll receive a basic security report highlighting any identified issues
+2. The report will include severity ratings and brief explanations of potential vulnerabilities
+3. For critical issues, we'll provide general recommendations on how to address them
 
-            If you're interested in a more comprehensive audit or have any questions, simply reply to this email.
+If you're interested in a more comprehensive audit or have any questions, simply reply to this email.
 
-            Stay secure,
-            The AegisVault Team">
-             <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
-            <!-- This helps prevent spam -->
-            <input type="hidden" name="_captcha" value="false">
-            <!-- Redirect after submission (optional) -->
-            <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
-        
-          <div class="form-group">
-            <label for="scan-email">Email</label>
-            <input type="email" id="scan-email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="contract-code">Contract Code or GitHub URL</label>
-            <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
-        </div>
-        <button type="submit" class="btn primary">Run Free Scan</button>
-        <div id="scan-message" class="form-message" style="display: none;"></div>
-    </form>
-</div>
+Stay secure,
+The AegisVault Team">
+                    
+                    <div class="form-group">
+                        <label for="scan-email">Email</label>
+                        <input type="email" id="scan-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contract-code">Contract Code or GitHub URL</label>
+                        <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Run Free Scan</button>
+                    <div id="scan-message" class="form-message" style="display: none;"></div>
+                </form>
+            </div>
         </div>
     </div>
 </section>
@@ -431,42 +428,54 @@
     </section>
 
     <!-- Free Contract Scan Section -->
-    <section id="free-scan" class="free-scan">
-        <div class="container">
-            <h2 class="section-title">Free Smart Contract Scan</h2>
-            <div class="scan-container">
-                <div class="scan-info">
-                    <h3>Get a Free Security Check</h3>
-                    <p>Submit your contract code or GitHub repository for a basic automated security scan.</p>
-                    <ul class="scan-benefits">
-                        <li><i class="fas fa-check"></i> Common vulnerability detection</li>
-                        <li><i class="fas fa-check"></i> Gas optimization opportunities</li>
-                        <li><i class="fas fa-check"></i> Best practice recommendations</li>
-                    </ul>
-                    <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
-                </div>
-                <div class="scan-form">
+<section id="free-scan" class="free-scan">
+    <div class="container">
+        <h2 class="section-title">Free Smart Contract Scan</h2>
+        <div class="scan-container">
+            <div class="scan-info">
+                <h3>Get a Free Security Check</h3>
+                <p>Submit your contract code or GitHub repository for a basic automated security scan.</p>
+                <ul class="scan-benefits">
+                    <li><i class="fas fa-check"></i> Common vulnerability detection</li>
+                    <li><i class="fas fa-check"></i> Gas optimization opportunities</li>
+                    <li><i class="fas fa-check"></i> Best practice recommendations</li>
+                </ul>
+                <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
+            </div>
+            <div class="scan-form">
                 <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
-                 <!-- This helps prevent spam -->
-                <input type="hidden" name="_captcha" value="false">
-                <!-- Redirect after submission (optional) -->
-                <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
-        
-        <div class="form-group">
-            <label for="scan-email">Email</label>
-            <input type="email" id="scan-email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="contract-code">Contract Code or GitHub URL</label>
-            <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
-        </div>
-        <button type="submit" class="btn primary">Run Free Scan</button>
-        <div id="scan-message" class="form-message" style="display: none;"></div>
-    </form>
-</div>
+                    <!-- Hidden fields for FormSubmit configuration -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
+                    <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! 
+
+We've received your submission and our automated scanning tools are now analyzing your contract for potential vulnerabilities and optimization opportunities.
+
+What to expect next:
+1. Within 24 hours, you'll receive a basic security report highlighting any identified issues
+2. The report will include severity ratings and brief explanations of potential vulnerabilities
+3. For critical issues, we'll provide general recommendations on how to address them
+
+If you're interested in a more comprehensive audit or have any questions, simply reply to this email.
+
+Stay secure,
+The AegisVault Team">
+                    
+                    <div class="form-group">
+                        <label for="scan-email">Email</label>
+                        <input type="email" id="scan-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contract-code">Contract Code or GitHub URL</label>
+                        <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Run Free Scan</button>
+                    <div id="scan-message" class="form-message" style="display: none;"></div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -526,6 +535,18 @@
         </div>
     </section>
 
+<!-- Add the thank you section before the footer -->
+<section id="thanks" style="display: none;" class="thank-you-section">
+    <div class="container text-center" style="padding: 100px 0;">
+        <h2 class="section-title">Thank You!</h2>
+        <p>Your contract has been submitted successfully. We'll analyze it and send you the results within 24 hours.</p>
+        <p>While you wait, feel free to explore our methodology or learn more about our services.</p>
+        <div style="margin-top: 30px;">
+            <a href="#home" class="btn primary">Back to Home</a>
+        </div>
+    </div>
+</section>
+ 
 <!-- Footer -->
 <footer>
     <div class="container">
