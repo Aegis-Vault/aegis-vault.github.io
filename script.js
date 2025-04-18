@@ -300,24 +300,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. "COMING SOON" BUTTON INTERACTION
-    const soonButtons = document.querySelectorAll('.soon-btn');
-    
-    soonButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Optional: Scroll to newsletter section
-            const newsletterSection = document.querySelector('.newsletter-signup');
-            if (newsletterSection) {
-                newsletterSection.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                // If no newsletter section, show contact form
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
+   // 4. "COMING SOON" BUTTON INTERACTION
+const soonButtons = document.querySelectorAll('.soon-btn');
+
+soonButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Optional: Scroll to newsletter section
+        const newsletterSection = document.querySelector('.newsletter-signup');
+        if (newsletterSection) {
+            newsletterSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // If no newsletter section, show contact form
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
             }
-        });
+        }
     });
 });
+
+// 5. FREE SCAN FORM HANDLING
+const scanForm = document.getElementById('scanForm');
+
+if (scanForm) {
+    scanForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const email = document.getElementById('scan-email').value;
+        const contractCode = document.getElementById('contract-code').value;
+        
+        // Show a loading state
+        const submitBtn = scanForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = 'Processing...';
+        submitBtn.disabled = true;
+        
+        // For demonstration purposes - simulate a successful submission
+        setTimeout(() => {
+            // Check if there's an existing message and remove it
+            const existingMessage = scanForm.querySelector('.form-message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+            
+            // Create message element
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('form-message', 'form-message-success');
+            messageElement.textContent = 'Thank you! Your contract has been submitted for scanning. Results will be emailed to you within 24 hours.';
+            
+            // Add message to form
+            scanForm.appendChild(messageElement);
+            
+            // Reset form
+            scanForm.reset();
+            
+            // Restore button
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+            
+            // Hide message after 8 seconds
+            setTimeout(() => {
+                messageElement.remove();
+            }, 8000);
+        }, 2000);
+        
+        // In a real implementation, you would send this data to your server or a service
+        console.log('Form data that would be sent:', { email, contractCode });
+    });
+}
