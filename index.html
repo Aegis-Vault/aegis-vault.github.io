@@ -81,7 +81,22 @@
                 <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
             </div>
          <div class="scan-form">
-            <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
+            <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! 
+
+            We've received your submission and our automated scanning tools are now analyzing your contract for potential vulnerabilities and optimization opportunities.
+
+            What to expect next:
+            1. Within 24 hours, you'll receive a basic security report highlighting any identified issues
+            2. The report will include severity ratings and brief explanations of potential vulnerabilities
+            3. For critical issues, we'll provide general recommendations on how to address them
+
+            If you're interested in a more comprehensive audit or have any questions, simply reply to this email.
+
+            Stay secure,
+            The AegisVault Team">
+             <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
             <!-- This helps prevent spam -->
             <input type="hidden" name="_captcha" value="false">
             <!-- Redirect after submission (optional) -->
