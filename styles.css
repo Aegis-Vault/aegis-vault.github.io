@@ -2,15 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #4361ee;
-    --secondary-color: #3a0ca3;
-    --accent-color: #f72585;
+    --primary-color: #4361ee;  /* Vibrant blue */
+    --secondary-color: #3a0ca3; /* Rich purple */
+    --accent-color: #f72585;   /* Distinctive pink */
     --dark-color: #1a1b25;
     --light-color: #f8f9fa;
     --gray-color: #6c757d;
     --success-color: #2ecc71;
     --warning-color: #f39c12;
     --danger-color: #e74c3c;
+
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
 }
 
 * {
@@ -25,7 +31,8 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    letter-spacing: 0.02rem;
+    line-height: 1.6;  /* Restore original rhythm */
     color: var(--dark-color);
     background-color: var(--light-color);
 }
@@ -125,11 +132,11 @@ nav .container {
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    border-radius: 5px;
-    font-weight: 500;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     cursor: pointer;
     border: none;
@@ -142,6 +149,8 @@ nav .container {
 
 .btn.primary:hover {
     background-color: #d81b60;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(216, 27, 96, 0.3);
 }
 
 .btn.secondary {
@@ -157,25 +166,24 @@ nav .container {
 /* Section Styles */
 section {
     padding: 100px 0;
+    animation: fadeIn 0.6s ease-out;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+    font-size: 2.75rem;
+    margin-bottom: 2.5rem;
     position: relative;
-    padding-bottom: 15px;
+    text-transform: none;
 }
 
 .section-title::after {
     content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
+    display: block;
     width: 100px;
     height: 4px;
     background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
 }
 
 /* Services Section */
@@ -185,29 +193,29 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
 }
 
 .service-card {
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
     border: 1px solid rgba(0,0,0,0.1);
     text-align: center;
 }
 
 .service-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .service-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin: 1rem auto 2rem;
 }
 
 .service-card h3 {
@@ -217,8 +225,9 @@ section {
 
 .price {
     margin-top: 20px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--accent-color);
+    font-size: 1.25rem;
 }
 
 /* Portfolio Section */
@@ -231,13 +240,13 @@ section {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
     border-left: 5px solid var(--primary-color);
     transition: transform 0.3s ease;
 }
 
 .case-study:hover {
-    transform: translateX(10px);
+    transform: translateX(8px);
 }
 
 .case-header {
@@ -254,10 +263,11 @@ section {
 }
 
 .finding {
-    background-color: rgba(0,0,0,0.03);
+    background: rgba(231, 76, 60, 0.05);
+    border-left: 3px solid var(--accent-color);
     border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .finding.critical {
@@ -270,6 +280,11 @@ section {
 
 .finding.medium {
     border-left: 4px solid var(--primary-color);
+}
+
+.finding h5 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
 .case-study h3 {
@@ -313,10 +328,8 @@ section {
 }
 
 .methodology ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding-left: 20px;
+    columns: 2;
+    column-gap: 3rem;
 }
 
 .findings li, .methodology li {
@@ -593,7 +606,7 @@ footer {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -727,9 +740,10 @@ footer {
 }
 
 .scan-form {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 12px;
 }
 
 /* Enhanced Case Study Styling */
@@ -771,10 +785,8 @@ footer {
 }
 
 .methodology ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding-left: 20px;
+    columns: 2;
+    column-gap: 3rem;
 }
 
 .result {
@@ -823,15 +835,16 @@ footer {
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 2rem;
+    padding: 4rem 0;
     text-align: center;
 }
 
 .dashboard-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 30px 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 2rem;
+    background: linear-gradient(145deg, #1a1b25 0%, #252637 100%);
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
 .dashboard-card:hover {
@@ -840,9 +853,10 @@ footer {
 }
 
 .dashboard-number {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -861,6 +875,7 @@ footer {
     color: var(--light-color);
     font-size: 1.1rem;
     font-weight: 500;
+    opacity: 0.9;
 }
 
 /* Thank you section */
@@ -955,6 +970,7 @@ footer {
     
     .hero h1 {
         font-size: 2.5rem;
+        line-height: 1.2;
     }
     
     .hero h2 {
@@ -978,8 +994,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .methodology ul {
+    .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .methodology ul {
+        columns: 1;
     }
 
     #chat {
@@ -1026,6 +1046,10 @@ footer {
     
     .dashboard-number {
         font-size: 2.5rem;
+    }
+    
+    .case-study {
+        padding: 1.5rem;
     }
 }
 
