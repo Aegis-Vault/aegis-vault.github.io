@@ -321,53 +321,54 @@ soonButtons.forEach(button => {
     });
 });
 
-// 5. FREE SCAN FORM HANDLING
-const scanForm = document.getElementById('scanForm');
+// Place this after the last function in your existing script.js
+// It should go just before the final closing bracket of your DOMContentLoaded event listener
 
-if (scanForm) {
-    scanForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form values
-        const email = document.getElementById('scan-email').value;
-        const contractCode = document.getElementById('contract-code').value;
-        
-        // Show a loading state
-        const submitBtn = scanForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
-        submitBtn.textContent = 'Processing...';
-        submitBtn.disabled = true;
-        
-        // For demonstration purposes - simulate a successful submission
-        setTimeout(() => {
-            // Check if there's an existing message and remove it
-            const existingMessage = scanForm.querySelector('.form-message');
-            if (existingMessage) {
-                existingMessage.remove();
-            }
-            
-            // Create message element
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('form-message', 'form-message-success');
-            messageElement.textContent = 'Thank you! Your contract has been submitted for scanning. Results will be emailed to you within 24 hours.';
-            
-            // Add message to form
-            scanForm.appendChild(messageElement);
-            
-            // Reset form
-            scanForm.reset();
-            
-            // Restore button
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
-            
-            // Hide message after 8 seconds
-            setTimeout(() => {
-                messageElement.remove();
-            }, 8000);
-        }, 2000);
-        
-        // In a real implementation, you would send this data to your server or a service
-        console.log('Form data that would be sent:', { email, contractCode });
+// 5. FREE SCAN FORM HANDLING - Replace this entire section with the new code
+function handleScanSubmit(event) {
+    event.preventDefault();
+    
+    // Show loading state
+    const submitBtn = document.querySelector('#scanForm button[type="submit"]');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Processing...';
+    submitBtn.disabled = true;
+    
+    // Get form data
+    const email = document.getElementById('scan-email').value;
+    const contractCode = document.getElementById('contract-code').value;
+    
+    // Create a message element or use existing one
+    const messageElement = document.getElementById('scan-message');
+    messageElement.style.display = 'block';
+    messageElement.className = 'form-message form-message-success';
+    messageElement.textContent = 'Thank you! Your contract has been submitted for scanning. Results will be emailed to you within 24 hours.';
+    
+    // Reset form
+    document.getElementById('scanForm').reset();
+    
+    // Restore button
+    submitBtn.textContent = originalBtnText;
+    submitBtn.disabled = false;
+    
+    // Store submission in localStorage to simulate database
+    const submissions = JSON.parse(localStorage.getItem('scanSubmissions') || '[]');
+    submissions.push({
+        email: email,
+        contractCode: contractCode,
+        date: new Date().toISOString()
     });
+    localStorage.setItem('scanSubmissions', JSON.stringify(submissions));
+    
+    // In production, you would send to your email here
+    console.log('Form submission:', { email, contractCode });
+    
+    // Hide message after 8 seconds
+    setTimeout(() => {
+        messageElement.style.display = 'none';
+    }, 8000);
 }
+// End of new code
+
+// This closing bracket should already exist in your file
+});
