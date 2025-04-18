@@ -41,65 +41,65 @@
         </div>
     </section>
 
-<!-- Security Dashboard -->
-<section class="security-dashboard">
-    <div class="container">
-        <div class="dashboard-grid">
-            <div class="dashboard-card">
-                <div class="dashboard-number" id="contractsCount">17</div>
-                <div class="dashboard-label">Contracts Reviewed</div>
-            </div>
-            <div class="dashboard-card">
-                <div class="dashboard-number" id="issuesCount">142</div>
-                <div class="dashboard-label">Vulnerabilities Found</div>
-            </div>
-            <div class="dashboard-card">
-                <div class="dashboard-number" id="criticalCount">23</div>
-                <div class="dashboard-label">Critical Issues</div>
-            </div>
-            <div class="dashboard-card">
-                <div class="dashboard-number" id="protectedValue">$4.2M</div>
-                <div class="dashboard-label">Value Protected</div>
+    <!-- Security Dashboard -->
+    <section class="security-dashboard">
+        <div class="container">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="dashboard-number" id="contractsCount">17</div>
+                    <div class="dashboard-label">Contracts Reviewed</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-number" id="issuesCount">142</div>
+                    <div class="dashboard-label">Vulnerabilities Found</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-number" id="criticalCount">23</div>
+                    <div class="dashboard-label">Critical Issues</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-number" id="protectedValue">$4.2M</div>
+                    <div class="dashboard-label">Value Protected</div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Free Contract Scan Section (MOVED HERE) -->
-<section id="free-scan" class="free-scan">
-    <div class="container">
-        <h2 class="section-title">Free Smart Contract Scan</h2>
-        <div class="scan-container">
-            <div class="scan-info">
-                <h3>Get a Free Security Check</h3>
-                <p>Submit your contract code or GitHub repository for a basic automated security scan.</p>
-                <ul class="scan-benefits">
-                    <li><i class="fas fa-check"></i> Common vulnerability detection</li>
-                    <li><i class="fas fa-check"></i> Gas optimization opportunities</li>
-                    <li><i class="fas fa-check"></i> Best practice recommendations</li>
-                </ul>
-                <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
-            </div>
-            <div class="scan-form">
-                <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
-                    <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! We've received your submission and our automated scanning tools are now analyzing your contract. Within 24 hours, you'll receive a basic security report highlighting issues, severity ratings, and recommendations. If you're interested in a comprehensive audit, simply reply to this email. Stay secure, The AegisVault Team">
-                    <div class="form-group">
-                        <label for="scan-email">Email</label>
-                        <input type="email" id="scan-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contract-code">Contract Code or GitHub URL</label>
-                        <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Run Free Scan</button>
-                    <div id="scan-message" class="form-message" style="display: none;"></div>
-                </form>
+    <!-- Free Contract Scan Section -->
+    <section id="free-scan" class="free-scan">
+        <div class="container">
+            <h2 class="section-title">Free Smart Contract Scan</h2>
+            <div class="scan-container">
+                <div class="scan-info">
+                    <h3>Get a Free Security Check</h3>
+                    <p>Submit your contract code or GitHub repository for a basic automated security scan.</p>
+                    <ul class="scan-benefits">
+                        <li><i class="fas fa-check"></i> Common vulnerability detection</li>
+                        <li><i class="fas fa-check"></i> Gas optimization opportunities</li>
+                        <li><i class="fas fa-check"></i> Best practice recommendations</li>
+                    </ul>
+                    <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
+                </div>
+                <div class="scan-form">
+                    <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://aegis-vault.github.io/thank-you.html">
+                        <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! We've received your submission and our automated scanning tools are now analyzing your contract. Within 24 hours, you'll receive a basic security report highlighting issues, severity ratings, and recommendations. If you're interested in a comprehensive audit, simply reply to this email. Stay secure, The AegisVault Team">
+                        <div class="form-group">
+                            <label for="scan-email">Email</label>
+                            <input type="email" id="scan-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contract-code">Contract Code or GitHub URL</label>
+                            <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Run Free Scan</button>
+                        <div id="scan-message" class="form-message" style="display: none;"></div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     
     <!-- Services Section -->
     <section id="services" class="services">
@@ -338,36 +338,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About AegisVault</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/400x400" alt="AegisVault Security">
-                </div>
-                <div class="about-text">
-                    <p>
-                        With over 10 years in tech and system engineering, AegisVault was founded out of a passion for blockchain security and decentralized systems.
-                    </p>
-                    <p>
-                        What started as a fascination with cryptography evolved into a dedicated security practice focused on protecting Web3 protocols from exploitation.
-                    </p>
-                    <h3>Technical Expertise:</h3>
-                    <ul class="skills-list">
-                        <li><span>Smart Contract Languages:</span> Solidity, Vyper</li>
-                        <li><span>Analysis Tools:</span> Slither, MythX, Foundry, Echidna</li>
-                        <li><span>Frameworks:</span> OpenZeppelin, Hardhat, Truffle</li>
-                        <li><span>DeFi Knowledge:</span> AMMs, Lending Protocols, Derivatives</li>
-                    </ul>
-                    <p>
-                        I believe security is not just about finding bugs—it's about understanding the entire protocol ecosystem and identifying real-world attack vectors.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Resources Section -->
     <section id="resources" class="resources">
         <div class="container">
@@ -413,60 +383,35 @@
         </div>
     </section>
 
-<!-- Free Contract Scan Section -->
-<section id="free-scan" class="free-scan">
-    <div class="container">
-        <h2 class="section-title">Free Smart Contract Scan</h2>
-        <div class="scan-container">
-            <div class="scan-info">
-                <h3>Get a Free Security Check</h3>
-                <p>Submit your contract code or GitHub repository for a basic automated security scan.</p>
-                <ul class="scan-benefits">
-                    <li><i class="fas fa-check"></i> Common vulnerability detection</li>
-                    <li><i class="fas fa-check"></i> Gas optimization opportunities</li>
-                    <li><i class="fas fa-check"></i> Best practice recommendations</li>
-                </ul>
-                <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
-            </div>
-            <div class="scan-form">
-                <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
-                    <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! We've received your submission and our automated scanning tools are now analyzing your contract. Within 24 hours, you'll receive a basic security report highlighting issues, severity ratings, and recommendations. If you're interested in a comprehensive audit, simply reply to this email. Stay secure, The AegisVault Team">
-                    <div class="form-group">
-                        <label for="scan-email">Email</label>
-                        <input type="email" id="scan-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contract-code">Contract Code or GitHub URL</label>
-                        <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Run Free Scan</button>
-                    <div id="scan-message" class="form-message" style="display: none;"></div>
-                </form>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About AegisVault</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/400x400" alt="AegisVault Security">
+                </div>
+                <div class="about-text">
+                    <p>
+                        With over 10 years in tech and system engineering, AegisVault was founded out of a passion for blockchain security and decentralized systems.
+                    </p>
+                    <p>
+                        What started as a fascination with cryptography evolved into a dedicated security practice focused on protecting Web3 protocols from exploitation.
+                    </p>
+                    <h3>Technical Expertise:</h3>
+                    <ul class="skills-list">
+                        <li><span>Smart Contract Languages:</span> Solidity, Vyper</li>
+                        <li><span>Analysis Tools:</span> Slither, MythX, Foundry, Echidna</li>
+                        <li><span>Frameworks:</span> OpenZeppelin, Hardhat, Truffle</li>
+                        <li><span>DeFi Knowledge:</span> AMMs, Lending Protocols, Derivatives</li>
+                    </ul>
+                    <p>
+                        I believe security is not just about finding bugs—it's about understanding the entire protocol ecosystem and identifying real-world attack vectors.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Chat Widget -->
-<div id="chat-widget">
-  <button id="chat-toggle" class="chat-toggle">
-    <i class="fas fa-comments"></i>
-  </button>
-  
-  <div id="chat" class="chat-container">
-    <div class="chat-header">
-      <span>AegisVault Support</span>
-      <button id="chat-close"><i class="fas fa-times"></i></button>
-    </div>
-    <div id="chatBox" class="chat-box"></div>
-    <form id="chatForm">
-      <input type="text" id="messageInput" placeholder="Ask about smart contract security..." required>
-      <button type="submit" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
-    </form>
-  </div>
-</div>
+    </section>
     
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -498,66 +443,62 @@
                         <i class="fas fa-envelope"></i> Email Me Directly
                     </a>
                     <p class="form-help">Include your project details and timeline for fastest response</p>
-                    
-                    <!-- Hidden form - can be enabled once Formspree is set up -->
-                    <!-- 
-                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary">Send Message</button>
-                    </form>
-                    -->
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Thank you section -->
-<section id="thanks" style="display: none;" class="thank-you-section">
-    <div class="container text-center" style="padding: 100px 0;">
-        <h2 class="section-title">Thank You!</h2>
-        <p>Your contract has been submitted successfully. We'll analyze it and send you the results within 24 hours.</p>
-        <p>While you wait, feel free to explore our methodology or learn more about our services.</p>
-        <div style="margin-top: 30px;">
-            <a href="#home" class="btn primary">Back to Home</a>
-        </div>
-    </div>
-</section>
- 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">AegisVault</div>
-            <p class="tagline">Securing Web3, One Smart Contract at a Time</p>
-            <div class="social-links">
-                <a href="https://github.com/Aegis-Vault" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/AegisVault" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://t.me/AEGISVault" target="_blank"><i class="fab fa-telegram"></i></a>
-                <a href="https://discord.gg/pZGe55FpEf" target="_blank"><i class="fab fa-discord"></i></a>
+    <!-- Thank you section -->
+    <section id="thanks" style="display: none;" class="thank-you-section">
+        <div class="container text-center" style="padding: 100px 0;">
+            <h2 class="section-title">Thank You!</h2>
+            <p>Your contract has been submitted successfully. We'll analyze it and send you the results within 24 hours.</p>
+            <p>While you wait, feel free to explore our methodology or learn more about our services.</p>
+            <div style="margin-top: 30px;">
+                <a href="#home" class="btn primary">Back to Home</a>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2025 AegisVault. All Rights Reserved.
+    </section>
+ 
+    <!-- Chat Widget -->
+    <div id="chat-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comments"></i>
+        </button>
+        
+        <div id="chat" class="chat-container">
+            <div class="chat-header">
+                <span>AegisVault Support</span>
+                <button id="chat-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chatBox" class="chat-box"></div>
+            <form id="chatForm">
+                <input type="text" id="messageInput" placeholder="Ask about smart contract security..." required>
+                <button type="submit" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+            </form>
         </div>
     </div>
-</footer>
 
-    <script src="https://cdn.socket.io/4.5.1/socket.io.min.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AegisVault</div>
+                <p class="tagline">Securing Web3, One Smart Contract at a Time</p>
+                <div class="social-links">
+                    <a href="https://github.com/Aegis-Vault" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/AegisVault" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://t.me/AEGISVault" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://discord.gg/pZGe55FpEf" target="_blank"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 AegisVault. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

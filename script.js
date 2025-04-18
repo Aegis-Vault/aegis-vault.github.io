@@ -1,6 +1,4 @@
 // script.js
-import { io } from 'socket.io-client';
-
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
     const burger = document.querySelector('.burger');
@@ -24,20 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         burger.classList.toggle('toggle');
     });
 
-    // Form Submission
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // In a real implementation, you would send the form data to your server
-            // For now, we'll just show an alert
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        });
-    }
-
     // Smooth Scrolling for Navigation Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -59,76 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // NEW CODE BELOW THIS LINE - DO NOT MODIFY EXISTING CODE ABOVE
-
-    // 1. ENHANCED CONTACT FORM WITH FORMSPREE
-    // Replace the existing form submission code with this enhanced version
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Show loading state
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            
-            try {
-                // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree endpoint
-                // Example: https://formspree.io/f/xrgdkpae
-                const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    // Show success message
-                    showFormMessage('success', 'Thank you! Your message has been sent successfully.');
-                    contactForm.reset();
-                } else {
-                    // Show error message
-                    showFormMessage('error', 'Oops! There was a problem sending your message. Please try again.');
-                }
-            } catch (error) {
-                // Show error message if fetch fails
-                showFormMessage('error', 'Something went wrong. Please check your connection and try again.');
-            }
-            
-            // Restore button state
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
-        });
-    }
-    
-    // Function to show form messages
-    function showFormMessage(type, message) {
-        // Remove any existing message
-        const existingMessage = document.querySelector('.form-message');
-        if (existingMessage) {
-            existingMessage.remove();
-        }
-        
-        // Create message element
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('form-message', `form-message-${type}`);
-        messageElement.textContent = message;
-        
-        // Add message to form
-        contactForm.appendChild(messageElement);
-        
-        // Remove message after 5 seconds
-        setTimeout(() => {
-            messageElement.remove();
-        }, 5000);
-    }
-
-    // 2. SECURITY DASHBOARD COUNTER ANIMATION
+    // Security Dashboard Counter Animation
     setupCounterAnimations();
 
     // Counter animation for dashboard
@@ -202,190 +117,168 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 3. NEWSLETTER FORM HANDLING
-    const newsletterForm = document.getElementById('newsletterForm');
-    
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const submitBtn = newsletterForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.textContent;
-            submitBtn.textContent = 'Subscribing...';
-            submitBtn.disabled = true;
-            
-            const formData = new FormData(newsletterForm);
-            
-            try {
-                // Use the same Formspree endpoint or create a new one specifically for the newsletter
-                const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    // Show success message
-                    newsletterForm.innerHTML = '<p class="success-message">Thank you for subscribing! You\'ll receive security updates soon.</p>';
-                } else {
-                    // Show error and reset
-                    alert('There was a problem with your subscription. Please try again.');
-                    submitBtn.textContent = originalBtnText;
-                    submitBtn.disabled = false;
-                }
-            } catch (error) {
-                alert('Something went wrong. Please check your connection and try again.');
-                submitBtn.textContent = originalBtnText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
-
-    // 4. "COMING SOON" BUTTON INTERACTION
+    // "COMING SOON" BUTTON INTERACTION
     const soonButtons = document.querySelectorAll('.soon-btn');
 
     soonButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
-            
-            // Optional: Scroll to newsletter section
-            const newsletterSection = document.querySelector('.newsletter-signup');
-            if (newsletterSection) {
-                newsletterSection.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                // If no newsletter section, show contact form
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
-    // 5. FREE SCAN FORM HANDLING
-    document.getElementById('scanForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const form = e.target;
-
-        // Show loading state
-        const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<div class="loader"></div> Processing...';
-
-        // Send form data
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-        })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = '#thanks';
-                    form.reset();
-                } else {
-                    alert('Error submitting the form. Please try again.');
-                }
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Run Free Scan';
-            });
-    });
+    // FREE SCAN FORM HANDLING
+    const scanForm = document.getElementById('scanForm');
+    if (scanForm) {
+        scanForm.addEventListener('submit', function (e) {
+            // Let FormSubmit handle this - we're using their direct form action
+            // Show loading state
+            const submitBtn = scanForm.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = '<div class="loader"></div> Processing...';
+        });
+    }
 
     // Check for #thanks in URL and show thank you section
-    document.addEventListener('DOMContentLoaded', function() {
-        if (window.location.hash === '#thanks') {
-            document.querySelectorAll('section').forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById('thanks').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-    });
-
     if (window.location.hash === '#thanks') {
         const thanksSection = document.getElementById('thanks');
         if (thanksSection) {
             thanksSection.style.display = 'block';
+            window.scrollTo({ top: thanksSection.offsetTop, behavior: 'smooth' });
         }
     }
 
-    // 6. CHAT FUNCTIONALITY
-    document.addEventListener('DOMContentLoaded', function() {
-        const chatToggle = document.getElementById('chat-toggle');
-        const chatClose = document.getElementById('chat-close');
-        const chatBox = document.getElementById('chat');
-        const chatForm = document.getElementById('chatForm');
-        const messageInput = document.getElementById('messageInput');
-        const chatMessages = document.getElementById('chatBox');
+    // CHAT FUNCTIONALITY
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatClose = document.getElementById('chat-close');
+    const chatContainer = document.getElementById('chat');
+    const chatBox = document.getElementById('chatBox');
+    const chatForm = document.getElementById('chatForm');
+    const messageInput = document.getElementById('messageInput');
+    
+    let socket;
+    
+    // Initialize the chat socket connection
+    function initSocket() {
+        if (socket && socket.connected) return; // Already connected
         
-        let socket;
-        
-        // Toggle chat visibility
-        chatToggle.addEventListener('click', function() {
-            chatBox.classList.add('active');
-            initSocket();
-        });
-        
-        chatClose.addEventListener('click', function() {
-            chatBox.classList.remove('active');
-        });
-        
-        // Send message
-        chatForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const message = messageInput.value.trim();
+        try {
+            // Connect to your backend server
+            socket = io('https://aegis-backend-qal6.onrender.com', {
+                transports: ['websocket'],
+                reconnection: true,
+                reconnectionDelay: 1000,
+                reconnectionAttempts: 5
+            });
             
-            if (message) {
-                addMessage(message, 'user');
-                if (socket && socket.connected) {
-                    socket.emit('chat_message', message);
-                } else {
-                    addMessage('Connection issue. Please try again later.', 'system');
+            // Connection status messages
+            socket.on('connect', () => {
+                addMessage('Connected to AegisVault support. How can we help with your smart contract security needs?', 'server');
+            });
+            
+            socket.on('connect_error', () => {
+                addMessage('Connection error. Please try again later.', 'system');
+                console.error('Socket connection error');
+            });
+            
+            socket.on('disconnect', () => {
+                addMessage('Disconnected from chat. Attempting to reconnect...', 'system');
+                console.log('Socket disconnected');
+            });
+            
+            // Receive messages
+            socket.on('chat_message', (msg) => {
+                addMessage(msg, 'server');
+            });
+            
+            // Fallback server demo response (in case the server doesn't respond)
+            setTimeout(() => {
+                if (chatBox.children.length <= 1) {
+                    addMessage('Hello! I\'m your AegisVault security assistant. How can I help you with smart contract security today?', 'server');
                 }
-                messageInput.value = '';
-            }
-        });
-        
-        // Initialize socket connection
-        function initSocket() {
-            if (socket && socket.connected) return;
+            }, 3000);
             
-            try {
-                socket = io('https://aegis-backend-qal6.onrender.com', {
-                    withCredentials: true,
-                    extraHeaders: {
-                        "Access-Control-Allow-Origin": "https://aegis-vault.github.io"
-                    }
-                });
-                
-                socket.on('connect', function() {
-                    addMessage('Connected to support chat', 'system');
-                });
-                
-                socket.on('connect_error', function(err) {
-                    console.error('Connection error:', err);
-                    addMessage('Connection error. Chat temporarily unavailable.', 'system');
-                });
-                
-                socket.on('chat_message', function(msg) {
-                    addMessage(msg, 'server');
-                });
-                
-            } catch (err) {
-                console.error('Socket initialization error:', err);
-                addMessage('Chat is currently unavailable.', 'system');
+        } catch (err) {
+            console.error('Chat initialization error:', err);
+            addMessage('Chat service is currently unavailable. Please email us directly.', 'system');
+        }
+    }
+    
+    // Toggle chat visibility
+    if (chatToggle) {
+        chatToggle.addEventListener('click', () => {
+            chatContainer.classList.add('active');
+            // If first time opening chat, initialize the connection
+            if (!socket || !socket.connected) {
+                initSocket();
             }
-        }
+            
+            // Focus the input field for immediate typing
+            messageInput.focus();
+        });
+    }
+    
+    // Close chat button functionality
+    if (chatClose) {
+        chatClose.addEventListener('click', () => {
+            chatContainer.classList.remove('active');
+        });
+    }
+    
+    // Send message on form submit
+    if (chatForm) {
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const message = messageInput.value.trim();
+            if (!message) return;
+            
+            // Display user message
+            addMessage(message, 'user');
+            
+            // Send to server if connected
+            if (socket && socket.connected) {
+                socket.emit('chat_message', message);
+                
+                // Demo server response for testing
+                setTimeout(() => {
+                    // Simulate server response if no response received within 2 seconds
+                    const responses = [
+                        "Thanks for your message. Our team will review your question and get back to you shortly.",
+                        "I understand you're asking about smart contract security. Could you provide more details about your specific concerns?",
+                        "We typically check for reentrancy, access control, and oracle manipulation vulnerabilities in our audits. Would you like to learn more about our process?",
+                        "Our audit process usually takes 1-2 weeks depending on contract complexity. When is your project planning to launch?"
+                    ];
+                    
+                    // Only send a demo response if we haven't received a real one
+                    const hasServerResponse = Array.from(chatBox.children).slice(-1)[0]?.classList.contains('server');
+                    if (!hasServerResponse) {
+                        addMessage(responses[Math.floor(Math.random() * responses.length)], 'server');
+                    }
+                }, 2000);
+            } else {
+                // Not connected - show error and try to reconnect
+                addMessage("Connection issue. Trying to reconnect...", 'system');
+                initSocket();
+            }
+            
+            // Clear input field
+            messageInput.value = '';
+        });
+    }
+    
+    // Function to add message to the chat
+    function addMessage(content, type) {
+        const message = document.createElement('div');
+        message.classList.add('message', type);
+        message.textContent = content;
         
-        function addMessage(content, type) {
-            const message = document.createElement('div');
-            message.classList.add('message', type);
-            message.textContent = content;
-            chatMessages.appendChild(message);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-    });
+        // Add message to chat
+        chatBox.appendChild(message);
+        
+        // Scroll to bottom
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
 });
