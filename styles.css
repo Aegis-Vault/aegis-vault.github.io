@@ -1419,3 +1419,130 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Deliverables in Service Cards */
+.deliverables {
+    margin: 15px 0;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.deliverables h4 {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.deliverables ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.deliverables li {
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.deliverables li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Enhanced Portfolio Styles */
+.case-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.case-content {
+    padding: 25px;
+}
+
+.case-description {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.finding {
+    background-color: rgba(0,0,0,0.03);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.finding.critical {
+    border-left: 4px solid #e74c3c;
+}
+
+.finding.high {
+    border-left: 4px solid #f39c12;
+}
+
+.finding.medium {
+    border-left: 4px solid #3498db;
+}
+
+.finding h5 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.methodology ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+.result {
+    background-color: rgba(46, 204, 113, 0.1);
+    border-left: 4px solid #2ecc71;
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 25px;
+}
+
+/* Contact Form Temporary Solution */
+.form-note {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.email-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 15px;
+}
+
+.email-btn i {
+    margin-right: 10px;
+}
+
+.form-help {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .methodology ul {
+        grid-template-columns: 1fr;
+    }
+}
