@@ -369,6 +369,16 @@ function handleScanSubmit(event) {
     }, 8000);
 }
 // End of new code
+// Check for #thanks in URL and show thank you section
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash === '#thanks') {
+        document.querySelectorAll('section').forEach(section => {
+            section.style.display = 'none';
+        });
+        document.getElementById('thanks').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+});
 
 // This closing bracket should already exist in your file
 });
