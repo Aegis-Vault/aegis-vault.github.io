@@ -496,6 +496,7 @@ footer {
         font-size: 2rem;
     }
 }
+
 /* Methodology Page Styles */
 /* Add these styles to your styles.css file */
 
@@ -1563,4 +1564,33 @@ footer {
     background-color: rgba(231, 76, 60, 0.1);
     border-left: 4px solid #e74c3c;
     color: #e74c3c;
+}
+
+/* Thanks Section */
+#thanks {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#thanks.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Loader Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
 }
