@@ -81,24 +81,11 @@
                 <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
             </div>
             <div class="scan-form">
-                <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
+                <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST" onsubmit="">
                     <!-- Hidden fields for FormSubmit configuration -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
-                    <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! 
-
-We've received your submission and our automated scanning tools are now analyzing your contract for potential vulnerabilities and optimization opportunities.
-
-What to expect next:
-1. Within 24 hours, you'll receive a basic security report highlighting any identified issues
-2. The report will include severity ratings and brief explanations of potential vulnerabilities
-3. For critical issues, we'll provide general recommendations on how to address them
-
-If you're interested in a more comprehensive audit or have any questions, simply reply to this email.
-
-Stay secure,
-The AegisVault Team">
-                    
+                    <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! We've received your submission and our automated scanning tools are now analyzing your contract. Within 24 hours, you'll receive a basic security report highlighting issues, severity ratings, and recommendations. If you're interested in a comprehensive audit, simply reply to this email. Stay secure, The AegisVault Team">
                     <div class="form-group">
                         <label for="scan-email">Email</label>
                         <input type="email" id="scan-email" name="email" required>
@@ -535,7 +522,7 @@ The AegisVault Team">
         </div>
     </section>
 
-<!-- Add the thank you section before the footer -->
+<!-- Thank you section -->
 <section id="thanks" style="display: none;" class="thank-you-section">
     <div class="container text-center" style="padding: 100px 0;">
         <h2 class="section-title">Thank You!</h2>
