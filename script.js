@@ -43,6 +43,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Enhanced Navigation Active State
+    function updateActiveNav() {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    }
+    updateActiveNav();
+
     // Security Dashboard Counter Animation
     setupCounterAnimations();
 
@@ -76,13 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
             counter.innerText = '0';
             
             const updateCounter = () => {
-                // Handle decimal numbers
                 const isDecimal = target % 1 !== 0;
                 const increment = isDecimal ? target / (speed / 10) : Math.ceil(target / speed);
                 const currentValue = parseFloat(counter.innerText.replace(prefix, '').replace(suffix, ''));
                 
                 if (currentValue < target) {
-                    // For decimals, we need to format the display correctly
                     if (isDecimal) {
                         counter.innerText = prefix + Math.min(currentValue + increment, target).toFixed(1) + suffix;
                     } else {
@@ -137,7 +159,23 @@ document.addEventListener('DOMContentLoaded', () => {
             // Let FormSubmit handle this - we're using their direct form action
             // Show loading state
             const submitBtn = scanForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<div class="loader"></div> Processing...';
+            
+            // If using custom submission handling (not FormSubmit), uncomment this:
+            /*
+            setTimeout(() => {
+                const messageEl = document.getElementById('scan-message');
+                if (messageEl) {
+                    messageEl.style.display = 'block';
+                    messageEl.className = 'form-message form-message-success';
+                    messageEl.innerHTML = 'Your contract has been submitted for scanning. Results will be emailed to you within 24 hours.';
+                }
+                
+                scanForm.reset();
+                submitBtn.innerHTML = originalText;
+            }, 1500);
+            */
         });
     }
 
@@ -281,4 +319,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Scroll to bottom
         chatBox.scrollTop = chatBox.scrollHeight;
     }
+
+    // Preserve Chat Functionality
+    function initializeChat() {
+        // Keep existing chat implementation
+    }
+    initializeChat();
 });
