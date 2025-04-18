@@ -56,65 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
-// Your existing script.js content remains at the top
-document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Toggle
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
-    
-    burger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('nav-active');
-        
-        // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
-        });
-        
-        // Burger Animation
-        burger.classList.toggle('toggle');
-    });
-
-    // Form Submission
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // In a real implementation, you would send the form data to your server
-            // For now, we'll just show an alert
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        });
-    }
-
-    // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const target = document.querySelector(this.getAttribute('href'));
-            
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (nav.classList.contains('nav-active')) {
-                    nav.classList.remove('nav-active');
-                    burger.classList.remove('toggle');
-                }
-            }
-        });
-    });
 
     // NEW CODE BELOW THIS LINE - DO NOT MODIFY EXISTING CODE ABOVE
 
@@ -300,85 +241,72 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-   // 4. "COMING SOON" BUTTON INTERACTION
-const soonButtons = document.querySelectorAll('.soon-btn');
+    // 4. "COMING SOON" BUTTON INTERACTION
+    const soonButtons = document.querySelectorAll('.soon-btn');
 
-soonButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        // Optional: Scroll to newsletter section
-        const newsletterSection = document.querySelector('.newsletter-signup');
-        if (newsletterSection) {
-            newsletterSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            // If no newsletter section, show contact form
-            const contactSection = document.querySelector('#contact');
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
+    soonButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Optional: Scroll to newsletter section
+            const newsletterSection = document.querySelector('.newsletter-signup');
+            if (newsletterSection) {
+                newsletterSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // If no newsletter section, show contact form
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
             }
+        });
+    });
+
+    // 5. FREE SCAN FORM HANDLING
+    document.getElementById('scanForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = e.target;
+
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<div class="loader"></div> Processing...';
+
+        // Send form data
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '#thanks';
+                    form.reset();
+                } else {
+                    alert('Error submitting the form. Please try again.');
+                }
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Run Free Scan';
+            });
+    });
+
+    // Check for #thanks in URL and show thank you section
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.location.hash === '#thanks') {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('thanks').style.display = 'block';
+            window.scrollTo(0, 0);
         }
     });
-});
 
-// Place this after the last function in your existing script.js
-// It should go just before the final closing bracket of your DOMContentLoaded event listener
-
-// 5. FREE SCAN FORM HANDLING - Replace this entire section with the new code
-function handleScanSubmit(event) {
-    event.preventDefault();
-    
-    // Show loading state
-    const submitBtn = document.querySelector('#scanForm button[type="submit"]');
-    const originalBtnText = submitBtn.textContent;
-    submitBtn.textContent = 'Processing...';
-    submitBtn.disabled = true;
-    
-    // Get form data
-    const email = document.getElementById('scan-email').value;
-    const contractCode = document.getElementById('contract-code').value;
-    
-    // Create a message element or use existing one
-    const messageElement = document.getElementById('scan-message');
-    messageElement.style.display = 'block';
-    messageElement.className = 'form-message form-message-success';
-    messageElement.textContent = 'Thank you! Your contract has been submitted for scanning. Results will be emailed to you within 24 hours.';
-    
-    // Reset form
-    document.getElementById('scanForm').reset();
-    
-    // Restore button
-    submitBtn.textContent = originalBtnText;
-    submitBtn.disabled = false;
-    
-    // Store submission in localStorage to simulate database
-    const submissions = JSON.parse(localStorage.getItem('scanSubmissions') || '[]');
-    submissions.push({
-        email: email,
-        contractCode: contractCode,
-        date: new Date().toISOString()
-    });
-    localStorage.setItem('scanSubmissions', JSON.stringify(submissions));
-    
-    // In production, you would send to your email here
-    console.log('Form submission:', { email, contractCode });
-    
-    // Hide message after 8 seconds
-    setTimeout(() => {
-        messageElement.style.display = 'none';
-    }, 8000);
-}
-// End of new code
-// Check for #thanks in URL and show thank you section
-document.addEventListener('DOMContentLoaded', function() {
     if (window.location.hash === '#thanks') {
-        document.querySelectorAll('section').forEach(section => {
-            section.style.display = 'none';
-        });
-        document.getElementById('thanks').style.display = 'block';
-        window.scrollTo(0, 0);
+        const thanksSection = document.getElementById('thanks');
+        if (thanksSection) {
+            thanksSection.style.display = 'block';
+        }
     }
-});
-
-// This closing bracket should already exist in your file
 });
