@@ -413,7 +413,7 @@
         </div>
     </section>
 
-    <!-- Free Contract Scan Section -->
+<!-- Free Contract Scan Section -->
 <section id="free-scan" class="free-scan">
     <div class="container">
         <h2 class="section-title">Free Smart Contract Scan</h2>
@@ -449,16 +449,24 @@
     </div>
 </section>
 
-<!-- Chat Section -->
-<section id="chat">
-    <div class="chat-container">
-        <div id="chatBox" class="chat-box"></div>
-        <form id="chatForm">
-            <input type="text" id="messageInput" placeholder="Type your message..." required>
-            <button type="submit" id="sendBtn">Send</button>
-        </form>
+<!-- Chat Widget -->
+<div id="chat-widget">
+  <button id="chat-toggle" class="chat-toggle">
+    <i class="fas fa-comments"></i>
+  </button>
+  
+  <div id="chat" class="chat-container">
+    <div class="chat-header">
+      <span>AegisVault Support</span>
+      <button id="chat-close"><i class="fas fa-times"></i></button>
     </div>
-</section>
+    <div id="chatBox" class="chat-box"></div>
+    <form id="chatForm">
+      <input type="text" id="messageInput" placeholder="Ask about smart contract security..." required>
+      <button type="submit" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+</div>
     
     <!-- Contact Section -->
     <section id="contact" class="contact">

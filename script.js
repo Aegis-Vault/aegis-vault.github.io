@@ -313,17 +313,79 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 6. CHAT FUNCTIONALITY
-    const socket = io('https://your-backend-domain.com'); // Replace with your backend URL
-
-    // Send a message
-    document.getElementById('sendBtn').addEventListener('click', () => {
-        const message = document.getElementById('messageInput').value;
-        socket.emit('chat_message', message);
-    });
-
-    // Receive a message
-    socket.on('chat_message', (msg) => {
-        const chatBox = document.getElementById('chatBox');
-        chatBox.innerHTML += `<p>${msg}</p>`;
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatClose = document.getElementById('chat-close');
+        const chatBox = document.getElementById('chat');
+        const chatForm = document.getElementById('chatForm');
+        const messageInput = document.getElementById('messageInput');
+        const chatMessages = document.getElementById('chatBox');
+        
+        let socket;
+        
+        // Toggle chat visibility
+        chatToggle.addEventListener('click', function() {
+            chatBox.classList.add('active');
+            initSocket();
+        });
+        
+        chatClose.addEventListener('click', function() {
+            chatBox.classList.remove('active');
+        });
+        
+        // Send message
+        chatForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const message = messageInput.value.trim();
+            
+            if (message) {
+                addMessage(message, 'user');
+                if (socket && socket.connected) {
+                    socket.emit('chat_message', message);
+                } else {
+                    addMessage('Connection issue. Please try again later.', 'system');
+                }
+                messageInput.value = '';
+            }
+        });
+        
+        // Initialize socket connection
+        function initSocket() {
+            if (socket && socket.connected) return;
+            
+            try {
+                socket = io('https://aegis-backend-qal6.onrender.com', {
+                    withCredentials: true,
+                    extraHeaders: {
+                        "Access-Control-Allow-Origin": "https://aegis-vault.github.io"
+                    }
+                });
+                
+                socket.on('connect', function() {
+                    addMessage('Connected to support chat', 'system');
+                });
+                
+                socket.on('connect_error', function(err) {
+                    console.error('Connection error:', err);
+                    addMessage('Connection error. Chat temporarily unavailable.', 'system');
+                });
+                
+                socket.on('chat_message', function(msg) {
+                    addMessage(msg, 'server');
+                });
+                
+            } catch (err) {
+                console.error('Socket initialization error:', err);
+                addMessage('Chat is currently unavailable.', 'system');
+            }
+        }
+        
+        function addMessage(content, type) {
+            const message = document.createElement('div');
+            message.classList.add('message', type);
+            message.textContent = content;
+            chatMessages.appendChild(message);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
     });
 });
