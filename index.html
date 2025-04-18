@@ -16,6 +16,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -40,7 +41,7 @@
         </div>
     </section>
 
-<!-- Security Dashboard - Add this after the hero section on your index.html -->
+<!-- Security Dashboard -->
 <section class="security-dashboard">
     <div class="container">
         <div class="dashboard-grid">
@@ -69,28 +70,85 @@
         <div class="container">
             <h2 class="section-title">Security Services</h2>
             <div class="services-grid">
+                <!-- Pre-Launch Security Review -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Pre-Launch Security Review</h3>
                     <p>Comprehensive security analysis before your protocol goes live. Identify critical vulnerabilities and ensure safe deployment.</p>
+                    
+                    <div class="deliverables">
+                        <h4>What You'll Receive:</h4>
+                        <ul>
+                            <li>Initial risk assessment report</li>
+                            <li>High-priority vulnerability identification</li>
+                            <li>Basic remediation guidance</li>
+                            <li>Pre-launch security checklist</li>
+                            <li>20-minute consultation call</li>
+                        </ul>
+                    </div>
+                    
                     <p class="price">Starting at $499</p>
                 </div>
+                
+                <!-- Smart Contract Audit -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-search"></i></div>
                     <h3>Smart Contract Audit</h3>
                     <p>In-depth analysis of contract code, logic flows, and potential attack vectors with detailed remediation guidance.</p>
+                    
+                    <div class="deliverables">
+                        <h4>What You'll Receive:</h4>
+                        <ul>
+                            <li>Comprehensive PDF audit report</li>
+                            <li>Line-by-line code review</li>
+                            <li>Detailed vulnerability findings</li>
+                            <li>Fix verification (1 round)</li>
+                            <li>30-minute review call</li>
+                            <li>GitHub markdown version for documentation</li>
+                        </ul>
+                    </div>
+                    
                     <p class="price">Starting at $799</p>
                 </div>
+                
+                <!-- Vulnerability Assessment -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-exclamation-triangle"></i></div>
                     <h3>Vulnerability Assessment</h3>
                     <p>Targeted review focusing on high-risk areas like reentrancy, oracle manipulation, and access control issues.</p>
+                    
+                    <div class="deliverables">
+                        <h4>What You'll Receive:</h4>
+                        <ul>
+                            <li>Focused security analysis PDF</li>
+                            <li>Automated scan results</li>
+                            <li>Critical vulnerability check</li>
+                            <li>Written remediation steps</li>
+                            <li>15-minute explainer call (optional)</li>
+                        </ul>
+                    </div>
+                    
                     <p class="price">Starting at $299</p>
                 </div>
+                
+                <!-- Ongoing Security Monitoring -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
                     <h3>Ongoing Security Monitoring</h3>
                     <p>Continuous protection with regular security checks and update reviews for evolving protocols.</p>
+                    
+                    <div class="deliverables">
+                        <h4>What You'll Receive:</h4>
+                        <ul>
+                            <li>Monthly security assessment reports</li>
+                            <li>Code change reviews</li>
+                            <li>New vulnerability alerts</li>
+                            <li>Priority response for security incidents</li>
+                            <li>Quarterly security strategy meeting</li>
+                            <li>On-call support (based on tier)</li>
+                        </ul>
+                    </div>
+                    
                     <p class="price">Custom Pricing</p>
                 </div>
             </div>
@@ -98,148 +156,155 @@
     </section>
 
     <!-- Portfolio Section -->
-<section id="portfolio" class="portfolio">
-    <div class="container">
-        <h2 class="section-title">Security Portfolio</h2>
-        <p class="portfolio-intro">
-            Selected security reviews and analyses demonstrating my methodical approach to smart contract vulnerabilities.
-        </p>
-        
-        <!-- Case Study 1: Squeeth -->
-        <div class="case-study">
-            <h3>Squeeth Protocol Security Analysis</h3>
-            <div class="tags">
-                <span class="tag">DeFi</span>
-                <span class="tag">ETH²</span>
-                <span class="tag">Uniswap</span>
-            </div>
-            <p class="case-description">
-                Conducted comprehensive security review of Squeeth, a complex power perpetual protocol offering ETH² exposure.
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Security Portfolio</h2>
+            <p class="portfolio-intro">
+                Selected security reviews and analyses demonstrating my methodical approach to smart contract vulnerabilities.
             </p>
-            <div class="findings">
-                <h4>Key Findings:</h4>
-                <ul>
-                    <li><strong>Reentrancy Risks</strong>: Identified 17 potential reentrancy vectors in ETH-handling functions</li>
-                    <li><strong>Oracle Manipulation</strong>: Discovered potential TWAP manipulation vulnerability with 420-second window</li>
-                    <li><strong>Mathematical Precision</strong>: Highlighted precision loss risks in ETH² calculations</li>
-                    <li><strong>Access Control</strong>: Flagged centralization concerns in privileged system functions</li>
-                </ul>
+            
+            <!-- Case Study 1: DeFi Protocol Vulnerability Assessment -->
+            <div class="case-study">
+                <div class="case-header">
+                    <h3>DeFi Protocol Vulnerability Assessment</h3>
+                    <div class="tags">
+                        <span class="tag">DeFi</span>
+                        <span class="tag">Solidity</span>
+                        <span class="tag">EVM</span>
+                    </div>
+                </div>
+                
+                <div class="case-content">
+                    <div class="case-description">
+                        <p>Conducted a comprehensive assessment of a withdrawal acceptance mechanism that identified a critical missing validation check.</p>
+                    </div>
+                    
+                    <div class="findings">
+                        <h4>Key Finding:</h4>
+                        <div class="finding critical">
+                            <h5>Duplicate Request Processing Vulnerability</h5>
+                            <p>Discovered that the protocol's withdrawal acceptance function lacked duplicate request validation, enabling reprocessing of the same action multiple times.</p>
+                            <p><strong>Impact:</strong> Potential griefing attacks, log tampering, and state inconsistency that could mislead off-chain systems.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology">
+                        <h4>Analysis Approach:</h4>
+                        <ul>
+                            <li>Manual code review for logical inconsistencies</li>
+                            <li>State behavior analysis with focus on idempotency</li>
+                            <li>Threat modeling for potential malicious usage patterns</li>
+                            <li>Implementation of validation fix using map-get verification</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="result">
+                        <h4>Outcome:</h4>
+                        <p>Finding was escalated to the protocol team and confirmed as a valid technical vulnerability. The issue was patched before public deployment, protecting the protocol from potential exploitation.</p>
+                    </div>
+                </div>
             </div>
-            <div class="methodology">
-                <h4>Methodology:</h4>
-                <p>Combined automated analysis with manual code review, focusing on:</p>
-                <ul>
-                    <li>Static pattern analysis for common vulnerabilities</li>
-                    <li>Function-level security assessment</li>
-                    <li>Cross-contract interaction verification</li>
-                    <li>Economic security considerations</li>
-                </ul>
+            
+            <!-- Case Study 2: Squeeth -->
+            <div class="case-study">
+                <div class="case-header">
+                    <h3>Squeeth Protocol Security Analysis</h3>
+                    <div class="tags">
+                        <span class="tag">DeFi</span>
+                        <span class="tag">ETH²</span>
+                        <span class="tag">Uniswap</span>
+                    </div>
+                </div>
+                
+                <div class="case-content">
+                    <div class="case-description">
+                        <p>Conducted comprehensive security review of Squeeth, a complex power perpetual protocol offering ETH² exposure.</p>
+                    </div>
+                    
+                    <div class="findings">
+                        <h4>Key Findings:</h4>
+                        <div class="finding high">
+                            <h5>Multiple Attack Vectors Identified</h5>
+                            <ul>
+                                <li><strong>Reentrancy Risks</strong>: Identified 17 potential reentrancy vectors in ETH-handling functions</li>
+                                <li><strong>Oracle Manipulation</strong>: Discovered potential TWAP manipulation vulnerability with 420-second window</li>
+                                <li><strong>Mathematical Precision</strong>: Highlighted precision loss risks in ETH² calculations</li>
+                                <li><strong>Access Control</strong>: Flagged centralization concerns in privileged system functions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology">
+                        <h4>Analysis Approach:</h4>
+                        <ul>
+                            <li>Static pattern analysis for common vulnerabilities</li>
+                            <li>Function-level security assessment</li>
+                            <li>Cross-contract interaction verification</li>
+                            <li>Economic security considerations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="result">
+                        <h4>Outcome:</h4>
+                        <p>All critical and high vulnerabilities were addressed prior to mainnet deployment, preventing potential exploits that could have impacted millions in protocol value.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 3: DeFiSaver -->
+            <div class="case-study">
+                <div class="case-header">
+                    <h3>DeFiSaver v3 Protocol Security Review</h3>
+                    <div class="tags">
+                        <span class="tag">DeFi</span>
+                        <span class="tag">Position Management</span>
+                        <span class="tag">Multi-Protocol</span>
+                    </div>
+                </div>
+                
+                <div class="case-content">
+                    <div class="case-description">
+                        <p>Analyzed DeFiSaver v3's smart contract architecture with focus on cross-protocol interactions and liquidation protection mechanisms.</p>
+                    </div>
+                    
+                    <div class="findings">
+                        <h4>Key Findings:</h4>
+                        <div class="finding medium">
+                            <h5>Cross-Protocol Risk Surface</h5>
+                            <ul>
+                                <li><strong>Proxy Implementation</strong>: Discovered potential vulnerabilities in proxy upgrade pattern</li>
+                                <li><strong>Flash Loan Attack Surface</strong>: Identified potential oracle manipulation risks during refinancing operations</li>
+                                <li><strong>Access Controls</strong>: Recommended improvements to user permission management</li>
+                                <li><strong>Gas Optimization</strong>: Provided multiple optimization strategies for high-frequency functions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology">
+                        <h4>Analysis Approach:</h4>
+                        <ul>
+                            <li>Slither automated analysis</li>
+                            <li>Manual review of critical liquidation protection logic</li>
+                            <li>Cross-contract interaction analysis</li>
+                            <li>Attack scenario simulation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="result">
+                        <h4>Outcome:</h4>
+                        <p>Protocol implemented all recommended security improvements, significantly reducing attack surface before launching integration with major lending platforms.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Call to Action -->
+            <div class="portfolio-cta">
+                <h3>Need a Comprehensive Security Review?</h3>
+                <p>I provide detailed security assessments tailored to your protocol's specific needs and risk profile.</p>
+                <a href="#contact" class="btn primary">Discuss Your Project</a>
             </div>
         </div>
-        
-        <!-- Case Study 2: DeFiSaver -->
-        <div class="case-study">
-            <h3>DeFiSaver v3 Protocol Security Review</h3>
-            <div class="tags">
-                <span class="tag">DeFi</span>
-                <span class="tag">Position Management</span>
-                <span class="tag">Multi-Protocol</span>
-            </div>
-            <p class="case-description">
-                Analyzed DeFiSaver v3's smart contract architecture with focus on cross-protocol interactions and liquidation protection mechanisms.
-            </p>
-            <div class="findings">
-                <h4>Key Findings:</h4>
-                <ul>
-                    <li><strong>Proxy Implementation</strong>: Discovered potential vulnerabilities in proxy upgrade pattern</li>
-                    <li><strong>Flash Loan Attack Surface</strong>: Identified potential oracle manipulation risks during refinancing operations</li>
-                    <li><strong>Access Controls</strong>: Recommended improvements to user permission management</li>
-                    <li><strong>Gas Optimization</strong>: Provided multiple optimization strategies for high-frequency functions</li>
-                </ul>
-            </div>
-            <div class="methodology">
-                <h4>Methodology:</h4>
-                <p>Security review conducted through multi-phase approach:</p>
-                <ul>
-                    <li>Slither automated analysis</li>
-                    <li>Manual review of critical liquidation protection logic</li>
-                    <li>Cross-contract interaction analysis</li>
-                    <li>Attack scenario simulation</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Case Study 3: Spectra Core -->
-        <div class="case-study">
-            <h3>Spectra Core Protocol Vulnerability Assessment</h3>
-            <div class="tags">
-                <span class="tag">DEX</span>
-                <span class="tag">AMM</span>
-                <span class="tag">Liquidity Pools</span>
-            </div>
-            <p class="case-description">
-                Performed comprehensive security assessment of Spectra Core, focusing on novel AMM mechanisms and liquidity provider protection.
-            </p>
-            <div class="findings">
-                <h4>Key Findings:</h4>
-                <ul>
-                    <li><strong>Slippage Manipulation</strong>: Identified potential MEV attack vectors in pool rebalancing mechanisms</li>
-                    <li><strong>Liquidity Lock Vulnerabilities</strong>: Discovered critical issues in timelock contract implementation</li>
-                    <li><strong>Precision Handling</strong>: Recommended fixes for decimal handling in fee calculations</li>
-                    <li><strong>Emergency Controls</strong>: Proposed improved circuit breaker design for market volatility protection</li>
-                </ul>
-            </div>
-            <div class="methodology">
-                <h4>Methodology:</h4>
-                <p>Security analysis combining automated and manual techniques:</p>
-                <ul>
-                    <li>Symbolic execution using Mythril</li>
-                    <li>Custom test scenarios in Foundry</li>
-                    <li>Economic attack vector modeling</li>
-                    <li>Security pattern analysis</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Case Study 4: Dual Defense -->
-        <div class="case-study">
-            <h3>Hacken Dual Defense Security Implementation</h3>
-            <div class="tags">
-                <span class="tag">Security Infrastructure</span>
-                <span class="tag">Multi-sig</span>
-                <span class="tag">Timelock</span>
-            </div>
-            <p class="case-description">
-                Collaborated on the security architecture for a defensive multi-layer governance and treasury protection system.
-            </p>
-            <div class="findings">
-                <h4>Contributions:</h4>
-                <ul>
-                    <li><strong>Multi-sig Design</strong>: Developed robust multi-signature implementation with threshold adjustment mechanisms</li>
-                    <li><strong>Timelock Security</strong>: Improved timelock contracts with advanced cancellation rights and monitoring</li>
-                    <li><strong>Emergency Response</strong>: Created protocol pause mechanisms with graduated authorization levels</li>
-                    <li><strong>Monitoring Tools</strong>: Implemented on-chain monitoring for suspicious transaction patterns</li>
-                </ul>
-            </div>
-            <div class="methodology">
-                <h4>Security Principles Applied:</h4>
-                <ul>
-                    <li>Defense in depth strategy</li>
-                    <li>Principle of least privilege</li>
-                    <li>Failure mode analysis</li>
-                    <li>Recovery mechanism design</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Portfolio Call to Action -->
-        <div class="portfolio-cta">
-            <h3>Need a Comprehensive Security Review?</h3>
-            <p>I provide detailed security assessments tailored to your protocol's specific needs and risk profile.</p>
-            <a href="#contact" class="btn primary">Discuss Your Project</a>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -271,81 +336,82 @@
         </div>
     </section>
 
-<!-- Resources Section - Add this before the contact section on your homepage -->
-<section id="resources" class="resources">
-    <div class="container">
-        <h2 class="section-title">Free Security Resources</h2>
-        <p class="resources-intro">
-            Use these tools and guides to improve your smart contract security before, during, and after development.
-        </p>
-        
-        <div class="resources-grid">
-            <div class="resource-card">
-                <div class="resource-icon">
-                    <i class="fas fa-clipboard-check"></i>
-                </div>
-                <h3>Pre-Audit Security Checklist</h3>
-                <p>A comprehensive checklist to verify your smart contracts before professional audit. Covers access control, input validation, reentrancy protection, and more.</p>
-                <a href="security-checklist.html" class="btn primary" target="_blank">
-                    <i class="fas fa-download"></i> Download Checklist
-                </a>
-            </div>
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2 class="section-title">Free Security Resources</h2>
+            <p class="resources-intro">
+                Use these tools and guides to improve your smart contract security before, during, and after development.
+            </p>
             
-            <div class="resource-card">
-                <div class="resource-icon">
-                    <i class="fas fa-book"></i>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Pre-Audit Security Checklist</h3>
+                    <p>A comprehensive checklist to verify your smart contracts before professional audit. Covers access control, input validation, reentrancy protection, and more.</p>
+                    <a href="security-checklist.html" class="btn primary" target="_blank">
+                        <i class="fas fa-download"></i> Download Checklist
+                    </a>
                 </div>
-                <h3>Security Best Practices Guide</h3>
-                <p>Learn the fundamentals of smart contract security with our comprehensive guide to secure development practices in Solidity.</p>
-                <a href="javascript:void(0);" class="btn secondary soon-btn">
-                    <i class="fas fa-clock"></i> Coming Soon
-                </a>
-            </div>
-            
-            <div class="resource-card">
-                <div class="resource-icon">
-                    <i class="fas fa-code"></i>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Security Best Practices Guide</h3>
+                    <p>Learn the fundamentals of smart contract security with our comprehensive guide to secure development practices in Solidity.</p>
+                    <a href="javascript:void(0);" class="btn secondary soon-btn">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </a>
                 </div>
-                <h3>Common Vulnerability Scanner</h3>
-                <p>A simple tool to scan your contracts for the most common vulnerability patterns found in DeFi protocols.</p>
-                <a href="javascript:void(0);" class="btn secondary soon-btn">
-                    <i class="fas fa-clock"></i> Coming Soon
-                </a>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Common Vulnerability Scanner</h3>
+                    <p>A simple tool to scan your contracts for the most common vulnerability patterns found in DeFi protocols.</p>
+                    <a href="javascript:void(0);" class="btn secondary soon-btn">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="free-scan" class="free-scan">
-    <div class="container">
-        <h2 class="section-title">Free Smart Contract Scan</h2>
-        <div class="scan-container">
-            <div class="scan-info">
-                <h3>Get a Free Security Check</h3>
-                <p>Submit your contract code or GitHub repository for a basic automated security scan.</p>
-                <ul class="scan-benefits">
-                    <li><i class="fas fa-check"></i> Common vulnerability detection</li>
-                    <li><i class="fas fa-check"></i> Gas optimization opportunities</li>
-                    <li><i class="fas fa-check"></i> Best practice recommendations</li>
-                </ul>
-                <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
-            </div>
-            <div class="scan-form">
-                <form id="scanForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                    <div class="form-group">
-                        <label for="scan-email">Email</label>
-                        <input type="email" id="scan-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contract-code">Contract Code or GitHub URL</label>
-                        <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Run Free Scan</button>
-                </form>
+    <!-- Free Contract Scan Section -->
+    <section id="free-scan" class="free-scan">
+        <div class="container">
+            <h2 class="section-title">Free Smart Contract Scan</h2>
+            <div class="scan-container">
+                <div class="scan-info">
+                    <h3>Get a Free Security Check</h3>
+                    <p>Submit your contract code or GitHub repository for a basic automated security scan.</p>
+                    <ul class="scan-benefits">
+                        <li><i class="fas fa-check"></i> Common vulnerability detection</li>
+                        <li><i class="fas fa-check"></i> Gas optimization opportunities</li>
+                        <li><i class="fas fa-check"></i> Best practice recommendations</li>
+                    </ul>
+                    <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
+                </div>
+                <div class="scan-form">
+                    <form id="scanForm">
+                        <div class="form-group">
+                            <label for="scan-email">Email</label>
+                            <input type="email" id="scan-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contract-code">Contract Code or GitHub URL</label>
+                            <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Run Free Scan</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -372,7 +438,15 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <p class="form-note">Contact form currently being updated. Please email or message me directly:</p>
+                    <a href="mailto:aegisvault1@gmail.com?subject=Security%20Audit%20Request" class="btn primary email-btn">
+                        <i class="fas fa-envelope"></i> Email Me Directly
+                    </a>
+                    <p class="form-help">Include your project details and timeline for fastest response</p>
+                    
+                    <!-- Hidden form - can be enabled once Formspree is set up -->
+                    <!-- 
+                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -391,6 +465,7 @@
                         </div>
                         <button type="submit" class="btn primary">Send Message</button>
                     </form>
+                    -->
                 </div>
             </div>
         </div>
@@ -403,7 +478,7 @@
                 <div class="footer-logo">AegisVault</div>
                 <p class="tagline">Securing Web3, One Smart Contract at a Time</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/Aegis-Vault"><i class="fab fa-github"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-telegram"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
