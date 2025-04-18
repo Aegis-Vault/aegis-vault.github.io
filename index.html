@@ -315,6 +315,37 @@
         </div>
     </div>
 </section>
+
+<section id="free-scan" class="free-scan">
+    <div class="container">
+        <h2 class="section-title">Free Smart Contract Scan</h2>
+        <div class="scan-container">
+            <div class="scan-info">
+                <h3>Get a Free Security Check</h3>
+                <p>Submit your contract code or GitHub repository for a basic automated security scan.</p>
+                <ul class="scan-benefits">
+                    <li><i class="fas fa-check"></i> Common vulnerability detection</li>
+                    <li><i class="fas fa-check"></i> Gas optimization opportunities</li>
+                    <li><i class="fas fa-check"></i> Best practice recommendations</li>
+                </ul>
+                <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
+            </div>
+            <div class="scan-form">
+                <form id="scanForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                    <div class="form-group">
+                        <label for="scan-email">Email</label>
+                        <input type="email" id="scan-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contract-code">Contract Code or GitHub URL</label>
+                        <textarea id="contract-code" name="contract-code" rows="5" required placeholder="Paste your contract code or GitHub repository URL"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Run Free Scan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
     
     <!-- Contact Section -->
     <section id="contact" class="contact">
