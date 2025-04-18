@@ -325,4 +325,30 @@ document.addEventListener('DOMContentLoaded', () => {
         // Keep existing chat implementation
     }
     initializeChat();
+
+    // Real-Time Stats Updating
+    async function fetchLiveStats() {
+        try {
+            const response = await fetch('https://api.aegisvault.com/stats');
+            const data = await response.json();
+
+            document.getElementById('contractsCount').textContent = data.contracts;
+            document.getElementById('issuesCount').textContent = data.issues;
+            document.getElementById('criticalCount').textContent = data.critical;
+            document.getElementById('protectedValue').textContent = `$${data.protected}M`;
+
+            // Add particle animation on update
+            createValueParticles(data.protected);
+        } catch (error) {
+            console.error('Failed to fetch live stats:', error);
+        }
+    }
+
+    function createValueParticles(value) {
+        // Placeholder for particle.js or similar animation library
+        console.log(`Creating particles for value: $${value}M`);
+    }
+
+    // Initialize stats fetching
+    fetchLiveStats();
 });
