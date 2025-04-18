@@ -1366,3 +1366,56 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+/* Free Scan Section */
+.free-scan {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 100px 0;
+}
+
+.scan-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.scan-info h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.scan-benefits {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.scan-benefits li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.scan-benefits i {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.scan-disclaimer {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+
+.scan-form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .scan-container {
+        grid-template-columns: 1fr;
+    }
+}
