@@ -6,185 +6,120 @@
     <title>AegisVault - Web3 Security Specialist</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="description" content="Web3 smart contract audits, DeFi vulnerability reviews, and security consulting. Free scan available.">
     <meta name="keywords" content="smart contract audit, DeFi security, Web3 audit, solidity, vulnerabilities">
     <meta property="og:title" content="AegisVault | Smart Contract Security Audits">
     <meta property="og:description" content="Professional Web3 security audits and vulnerability assessments. Protect your protocol with expert reviews.">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AegisVault",
-        "url": "https://aegis-vault.github.io",
-        "logo": "https://aegis-vault.github.io/logo.png",
-        "sameAs": [
-            "https://twitter.com/aegisvault",
-            "https://linkedin.com/company/aegisvault"
-        ]
-    }
-    </script>
 </head>
 <body>
-    <!-- Improved Mobile Navigation -->
+    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">AegisVault</div>
-            <div class="burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="#resources">Resources</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </div>
     </nav>
 
-    <!-- Enhanced Hero Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1 data-aos="fade-up">Securing the Future of Web3</h1>
-            <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Smart Contract Auditing & DeFi Security Solutions</p>
-            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+            <h1>Securing the Future of Web3</h1>
+            <h2>Smart Contract Auditing & DeFi Security</h2>
+            <p>Identifying vulnerabilities before attackers do.</p>
+            <div class="cta-buttons">
                 <a href="#services" class="btn primary pulse">View Services</a>
                 <a href="#scan" class="btn secondary">Free Security Scan</a>
             </div>
         </div>
     </section>
 
-    <!-- Animated Security Dashboard -->
-    <section class="dashboard">
+    <!-- Security Dashboard -->
+    <section class="security-dashboard">
         <div class="container">
             <div class="dashboard-grid">
                 <div class="dashboard-card" data-aos="zoom-in">
-                    <div class="dashboard-number" data-count="17">0</div>
+                    <div class="dashboard-number" id="contractsCount" data-count="17">0</div>
                     <div class="dashboard-label">Contracts Secured</div>
                 </div>
                 <div class="dashboard-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="dashboard-number" data-count="142">0</div>
+                    <div class="dashboard-number" id="issuesCount" data-count="142">0</div>
                     <div class="dashboard-label">Vulnerabilities Found</div>
                 </div>
                 <div class="dashboard-card" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="dashboard-number" data-count="23">0</div>
+                    <div class="dashboard-number" id="criticalCount" data-count="23">0</div>
                     <div class="dashboard-label">Critical Issues</div>
                 </div>
                 <div class="dashboard-card" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="dashboard-number" data-count="4.2">0</div>
+                    <div class="dashboard-number" id="protectedValue" data-count="4.2">0</div>
                     <div class="dashboard-label">Value Protected ($M)</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Free Smart Contract Scan -->
+    <!-- Free Contract Scan Section -->
     <section id="scan" class="free-scan">
         <div class="container">
             <div class="scan-container">
                 <div class="scan-info">
                     <h3>Free Smart Contract Scan</h3>
-                    <p class="subtitle">Get a Free Security Check</p>
                     <p>Submit your contract code or GitHub repository for a basic automated security scan.</p>
-                    
                     <ul class="scan-benefits">
                         <li><i class="fas fa-shield-alt"></i> Common vulnerability detection</li>
                         <li><i class="fas fa-gas-pump"></i> Gas optimization opportunities</li>
                         <li><i class="fas fa-check-circle"></i> Best practice recommendations</li>
                     </ul>
-                    
                     <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
                 </div>
-
-                <!-- Updated Form -->
-                <form id="scanForm" 
-                      action="https://formsubmit.co/your@email.com" 
-                      method="POST"
-                      class="scan-form">
-                    
-                    <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_subject" value="New Free Scan Request">
-                    <input type="hidden" name="_autoresponse" value="Thank you for submitting your contract! We'll review it and get back to you within 24 hours.">
-                    <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
-                    
-                    <!-- Email Input -->
-                    <div class="form-group">
-                        <input type="email" 
-                               name="email"
-                               placeholder="Your email address" 
-                               required>
-                    </div>
-                    
-                    <!-- Contract Code/URL Input -->
-                    <div class="form-group">
-                        <textarea 
-                            name="contract-code"
-                            placeholder="Paste contract code or GitHub URL" 
-                            rows="6"
-                            required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select name="contract-type" required>
-                            <option value="">Select Contract Type</option>
-                            <option>ERC20</option>
-                            <option>ERC721</option>
-                            <option>Custom Logic</option>
-                            <option>DeFi Strategy</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" 
-                               name="telegram" 
-                               placeholder="Telegram handle (optional)">
-                    </div>
-                    
-                    <button type="submit" class="btn primary">
-                        <span class="button-text">Run Free Scan</span>
-                        <i class="fas fa-spinner fa-spin" style="display: none"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Trusted by Web3 Builders</h2>
-            <div class="client-logos">
-                <img src="path-to-ethereum-logo.svg" alt="Ethereum">
-                <img src="path-to-arbitrum-logo.svg" alt="Arbitrum">
-                <img src="path-to-optimism-logo.svg" alt="Optimism">
-                <img src="path-to-polygon-logo.svg" alt="Polygon">
-            </div>
-            
-            <div class="testimonial-carousel">
-                <div class="testimonial active">
-                    <div class="client-meta">
-                        <img src="placeholder-client.png" class="client-logo" alt="Client Logo">
-                        <div class="client-info">
-                            <div class="stars">★★★★★</div>
-                            <div class="client-name">DeFi Lending Client, 2024</div>
+                <div class="scan-form">
+                    <form id="scanForm" action="https://formsubmit.co/aegisvault1@gmail.com" method="POST">
+                        <!-- Hidden fields for FormSubmit configuration -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://aegis-vault.github.io/thank-you.html">
+                        <input type="hidden" name="_subject" value="New Free Scan Request">
+                        <input type="hidden" name="_autoresponse" value="Thank you for submitting your smart contract to AegisVault! We've received your submission and our automated scanning tools are now analyzing your contract. Within 24 hours, you'll receive a basic security report highlighting issues, severity ratings, and recommendations. If you're interested in a comprehensive audit, simply reply to this email. Stay secure, The AegisVault Team">
+                        
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your email address" required>
                         </div>
-                    </div>
-                    <blockquote>"AegisVault identified 3 critical vulnerabilities in our protocol that could have led to $2M+ in potential losses. Essential security partner."</blockquote>
-                </div>
-                <div class="testimonial">...</div>
-                <div class="carousel-dots">
-                    <span class="carousel-dot active"></span>
-                    <span class="carousel-dot"></span>
+                        <div class="form-group">
+                            <textarea name="contract-code" rows="5" placeholder="Paste your contract code or GitHub repository URL" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <select name="contract-type" required>
+                                <option value="">Select Contract Type</option>
+                                <option>ERC20</option>
+                                <option>ERC721</option>
+                                <option>Custom Logic</option>
+                                <option>DeFi Strategy</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="telegram" placeholder="Telegram handle (optional)">
+                        </div>
+                        <button type="submit" class="btn primary">
+                            <span class="button-text">Run Free Scan</span>
+                            <i class="fas fa-spinner fa-spin" style="display: none"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Services Section with Improved Card Styling -->
+    
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Security Services</h2>
@@ -270,7 +205,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section with Enhanced Case Studies -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2 class="section-title">Security Portfolio</h2>
@@ -278,7 +213,7 @@
                 Selected security reviews and analyses demonstrating my methodical approach to smart contract vulnerabilities.
             </p>
             
-            <!-- Case Study Example -->
+            <!-- Case Study 1: DeFi Protocol Vulnerability Assessment -->
             <div class="case-study">
                 <div class="case-header">
                     <h3>DeFi Protocol Vulnerability Assessment</h3>
@@ -316,13 +251,6 @@
                     <div class="result">
                         <h4>Outcome:</h4>
                         <p>Finding was escalated to the protocol team and confirmed as a valid technical vulnerability. The issue was patched before public deployment, protecting the protocol from potential exploitation.</p>
-                    </div>
-                    
-                    <div class="case-cta">
-                        <a href="sample-audit.pdf" class="btn secondary" download>
-                            <i class="fas fa-file-pdf"></i>
-                            Download Sample Report (Redacted)
-                        </a>
                     </div>
                 </div>
             </div>
@@ -370,66 +298,6 @@
                         <h4>Outcome:</h4>
                         <p>All critical and high vulnerabilities were addressed prior to mainnet deployment, preventing potential exploits that could have impacted millions in protocol value.</p>
                     </div>
-                    
-                    <div class="case-cta">
-                        <a href="sample-audit.pdf" class="btn secondary" download>
-                            <i class="fas fa-file-pdf"></i>
-                            Download Sample Report (Redacted)
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Case Study 3: DeFiSaver -->
-            <div class="case-study">
-                <div class="case-header">
-                    <h3>DeFiSaver v3 Protocol Security Review</h3>
-                    <div class="tags">
-                        <span class="tag">DeFi</span>
-                        <span class="tag">Position Management</span>
-                        <span class="tag">Multi-Protocol</span>
-                    </div>
-                </div>
-                
-                <div class="case-content">
-                    <div class="case-description">
-                        <p>Analyzed DeFiSaver v3's smart contract architecture with focus on cross-protocol interactions and liquidation protection mechanisms.</p>
-                    </div>
-                    
-                    <div class="findings">
-                        <h4>Key Findings:</h4>
-                        <div class="finding medium">
-                            <h5>Cross-Protocol Risk Surface</h5>
-                            <ul>
-                                <li><strong>Proxy Implementation</strong>: Discovered potential vulnerabilities in proxy upgrade pattern</li>
-                                <li><strong>Flash Loan Attack Surface</strong>: Identified potential oracle manipulation risks during refinancing operations</li>
-                                <li><strong>Access Controls</strong>: Recommended improvements to user permission management</li>
-                                <li><strong>Gas Optimization</strong>: Provided multiple optimization strategies for high-frequency functions</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="methodology">
-                        <h4>Analysis Approach:</h4>
-                        <ul>
-                            <li>Slither automated analysis</li>
-                            <li>Manual review of critical liquidation protection logic</li>
-                            <li>Cross-contract interaction analysis</li>
-                            <li>Attack scenario simulation</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="result">
-                        <h4>Outcome:</h4>
-                        <p>Protocol implemented all recommended security improvements, significantly reducing attack surface before launching integration with major lending platforms.</p>
-                    </div>
-                    
-                    <div class="case-cta">
-                        <a href="sample-audit.pdf" class="btn secondary" download>
-                            <i class="fas fa-file-pdf"></i>
-                            Download Sample Report (Redacted)
-                        </a>
-                    </div>
                 </div>
             </div>
             
@@ -442,36 +310,85 @@
         </div>
     </section>
 
-    <!-- Preserve Chat Widget -->
-    <div id="chat-widget">
-        <button id="chat-toggle" class="chat-toggle">
-            <i class="fas fa-comments"></i>
-        </button>
-        
-        <div id="chat" class="chat-container">
-            <div class="chat-header">
-                <span>AegisVault Support</span>
-                <span id="connection-status" class="status connected">Connected</span>
-                <button id="chat-close"><i class="fas fa-times"></i></button>
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2 class="section-title">Free Security Resources</h2>
+            <p class="resources-intro">
+                Use these tools and guides to improve your smart contract security before, during, and after development.
+            </p>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Pre-Audit Security Checklist</h3>
+                    <p>A comprehensive checklist to verify your smart contracts before professional audit. Covers access control, input validation, reentrancy protection, and more.</p>
+                    <a href="security-checklist.html" class="btn primary" target="_blank">
+                        <i class="fas fa-download"></i> Download Checklist
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Security Best Practices Guide</h3>
+                    <p>Learn the fundamentals of smart contract security with our comprehensive guide to secure development practices in Solidity.</p>
+                    <a href="#contact" class="btn secondary soon-btn">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Common Vulnerability Scanner</h3>
+                    <p>A simple tool to scan your contracts for the most common vulnerability patterns found in DeFi protocols.</p>
+                    <a href="#contact" class="btn secondary soon-btn">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </a>
+                </div>
             </div>
-            <div id="chatBox" class="chat-box"></div>
-            <form id="chatForm">
-                <input type="text" id="messageInput" placeholder="Ask about smart contract security..." required>
-                <input type="file" id="fileUpload" accept=".sol,.txt,.zip">
-                <button type="submit" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
-            </form>
         </div>
-        <button aria-label="Open chat">Chat</button>
-    </div>
-
-    <!-- Vulnerability Chart -->
-    <canvas id="vulnerabilityChart" width="400" height="400"></canvas>
-
-    <!-- Lazy Loaded Image -->
-    <img src="path-to-image.jpg" loading="lazy" alt="Description">
-
-    <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle">Toggle Dark Mode</button>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="contact-intro">Ready to secure your Web3 project? Let's discuss how I can help protect your protocol.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>aegisvault1@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <p>@AEGISVault</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-twitter"></i>
+                        <p>@AegisVault</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <p>github.com/Aegis-Vault</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <p class="form-note">Contact form currently being updated. Please email or message me directly:</p>
+                    <a href="mailto:aegisvault1@gmail.com?subject=Security%20Audit%20Request" class="btn primary email-btn">
+                        <i class="fas fa-envelope"></i> Email Me Directly
+                    </a>
+                    <p class="form-help">Include your project details and timeline for fastest response</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -492,8 +409,6 @@
         </div>
     </footer>
 
-    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

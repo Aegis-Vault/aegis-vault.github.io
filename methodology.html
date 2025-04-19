@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audit Methodology - AegisVault</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</style>
 </head>
 <body>
     <!-- Navigation -->
@@ -17,7 +10,7 @@
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#portfolio">Portfolio</a></li>
                 <li><a href="methodology.html" class="active">Methodology</a></li>
-                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="burger">
@@ -52,19 +45,23 @@
                         <h3>Scoping & Setup</h3>
                         <p>The foundation of every effective audit starts with clear scope definition and proper environment setup.</p>
                         <div class="phase-details">
-                            <h4>Key Activities:</h4>
-                            <ul>
-                                <li>Define exact contract boundaries and dependencies</li>
-                                <li>Set up development environment with appropriate tools</li>
-                                <li>Establish test networks and conditions</li>
-                                <li>Document project specifications and intended behaviors</li>
-                            </ul>
-                            <h4>Deliverables:</h4>
-                            <ul>
-                                <li>Scope document with contract addresses/files</li>
-                                <li>Test environment confirmation</li>
-                                <li>Initial risk assessment</li>
-                            </ul>
+                            <div>
+                                <h4>Key Activities:</h4>
+                                <ul>
+                                    <li>Define exact contract boundaries and dependencies</li>
+                                    <li>Set up development environment with appropriate tools</li>
+                                    <li>Establish test networks and conditions</li>
+                                    <li>Document project specifications and intended behaviors</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Deliverables:</h4>
+                                <ul>
+                                    <li>Scope document with contract addresses/files</li>
+                                    <li>Test environment confirmation</li>
+                                    <li>Initial risk assessment</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,21 +73,25 @@
                         <h3>Automated Analysis</h3>
                         <p>Leveraging industry-standard and custom tools to identify common vulnerabilities and code patterns.</p>
                         <div class="phase-details">
-                            <h4>Tools Utilized:</h4>
-                            <ul>
-                                <li>Slither: Static analysis framework</li>
-                                <li>Mythril: Security analysis tool</li>
-                                <li>Echidna: Fuzzing test framework</li>
-                                <li>Custom scripts for project-specific issues</li>
-                            </ul>
-                            <h4>Vulnerability Categories:</h4>
-                            <ul>
-                                <li>Reentrancy vulnerabilities</li>
-                                <li>Integer overflow/underflow</li>
-                                <li>Access control issues</li>
-                                <li>Gas optimization problems</li>
-                                <li>Compiler version compatibility</li>
-                            </ul>
+                            <div>
+                                <h4>Tools Utilized:</h4>
+                                <ul>
+                                    <li>Slither: Static analysis framework</li>
+                                    <li>Mythril: Security analysis tool</li>
+                                    <li>Echidna: Fuzzing test framework</li>
+                                    <li>Custom scripts for project-specific issues</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Vulnerability Categories:</h4>
+                                <ul>
+                                    <li>Reentrancy vulnerabilities</li>
+                                    <li>Integer overflow/underflow</li>
+                                    <li>Access control issues</li>
+                                    <li>Gas optimization problems</li>
+                                    <li>Compiler version compatibility</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,22 +103,26 @@
                         <h3>Manual Code Review</h3>
                         <p>Detailed line-by-line analysis of code logic, security patterns, and edge cases that automated tools may miss.</p>
                         <div class="phase-details">
-                            <h4>Review Focus Areas:</h4>
-                            <ul>
-                                <li>Business logic vulnerabilities</li>
-                                <li>Cross-contract interaction risks</li>
-                                <li>Economic attack vectors</li>
-                                <li>Centralization and trust assumptions</li>
-                                <li>Error handling and edge cases</li>
-                            </ul>
-                            <h4>Methodology:</h4>
-                            <ul>
-                                <li>Control flow analysis</li>
-                                <li>Data flow tracking</li>
-                                <li>State manipulation testing</li>
-                                <li>Privilege escalation attempts</li>
-                                <li>Function-level security assessment</li>
-                            </ul>
+                            <div>
+                                <h4>Review Focus Areas:</h4>
+                                <ul>
+                                    <li>Business logic vulnerabilities</li>
+                                    <li>Cross-contract interaction risks</li>
+                                    <li>Economic attack vectors</li>
+                                    <li>Centralization and trust assumptions</li>
+                                    <li>Error handling and edge cases</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Methodology:</h4>
+                                <ul>
+                                    <li>Control flow analysis</li>
+                                    <li>Data flow tracking</li>
+                                    <li>State manipulation testing</li>
+                                    <li>Privilege escalation attempts</li>
+                                    <li>Function-level security assessment</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,20 +134,24 @@
                         <h3>Test Case Development</h3>
                         <p>Creating specific test scenarios to verify vulnerabilities and ensure contract behavior meets specifications.</p>
                         <div class="phase-details">
-                            <h4>Testing Approaches:</h4>
-                            <ul>
-                                <li>Unit testing key functions</li>
-                                <li>Integration testing between contracts</li>
-                                <li>Exploit proof-of-concept development</li>
-                                <li>Validation of security assumptions</li>
-                            </ul>
-                            <h4>Frameworks:</h4>
-                            <ul>
-                                <li>Hardhat</li>
-                                <li>Foundry</li>
-                                <li>Truffle</li>
-                                <li>Custom testing environments</li>
-                            </ul>
+                            <div>
+                                <h4>Testing Approaches:</h4>
+                                <ul>
+                                    <li>Unit testing key functions</li>
+                                    <li>Integration testing between contracts</li>
+                                    <li>Exploit proof-of-concept development</li>
+                                    <li>Validation of security assumptions</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Frameworks:</h4>
+                                <ul>
+                                    <li>Hardhat</li>
+                                    <li>Foundry</li>
+                                    <li>Truffle</li>
+                                    <li>Custom testing environments</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,20 +163,24 @@
                         <h3>Reporting & Remediation</h3>
                         <p>Detailed documentation of findings with clear remediation guidance and follow-up verification.</p>
                         <div class="phase-details">
-                            <h4>Report Components:</h4>
-                            <ul>
-                                <li>Executive summary for stakeholders</li>
-                                <li>Detailed technical findings</li>
-                                <li>Severity classifications (Critical to Informational)</li>
-                                <li>Specific remediation recommendations</li>
-                                <li>Code examples for fixes where applicable</li>
-                            </ul>
-                            <h4>Post-Audit Process:</h4>
-                            <ul>
-                                <li>Developer consultation on findings</li>
-                                <li>Verification of implemented fixes</li>
-                                <li>Final security assessment</li>
-                            </ul>
+                            <div>
+                                <h4>Report Components:</h4>
+                                <ul>
+                                    <li>Executive summary for stakeholders</li>
+                                    <li>Detailed technical findings</li>
+                                    <li>Severity classifications</li>
+                                    <li>Specific remediation recommendations</li>
+                                    <li>Code examples for fixes where applicable</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Post-Audit Process:</h4>
+                                <ul>
+                                    <li>Developer consultation on findings</li>
+                                    <li>Verification of implemented fixes</li>
+                                    <li>Final security assessment</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -266,10 +279,10 @@
                 <div class="footer-logo">AegisVault</div>
                 <p class="tagline">Securing Web3, One Smart Contract at a Time</p>
                 <div class="social-links">
-                    <a href="https://github.com/Aegis-Vault"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Aegis-Vault" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/AegisVault" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://t.me/AEGISVault" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://discord.gg/pZGe55FpEf" target="_blank"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
             <div class="copyright">
@@ -280,4 +293,279 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Methodology - AegisVault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Methodology Page Specific Styles */
+        .methodology-hero {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--light-color);
+            padding-top: 80px;
+            text-align: center;
+        }
+
+        .methodology-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .methodology-hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .methodology-content {
+            padding: 80px 0;
+        }
+
+        .methodology-overview {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .methodology-overview h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .methodology-overview p {
+            font-size: 1.1rem;
+        }
+
+        .methodology-phases {
+            margin-bottom: 80px;
+        }
+
+        .phase {
+            display: flex;
+            margin-bottom: 50px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .phase:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .phase-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            padding: 20px;
+            min-width: 80px;
+        }
+
+        .phase-content {
+            padding: 30px;
+            width: 100%;
+        }
+
+        .phase-content h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .phase-content > p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--gray-color);
+        }
+
+        .phase-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .phase-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .phase-details ul {
+            padding-left: 20px;
+        }
+
+        .phase-details li {
+            margin-bottom: 8px;
+            color: var(--gray-color);
+        }
+
+        .severity-section {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .severity-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .severity-section > p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .severity-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .severity {
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .severity:hover {
+            transform: translateY(-5px);
+        }
+
+        .severity h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .severity p {
+            font-size: 1rem;
+            color: var(--gray-color);
+        }
+
+        .severity.critical {
+            border-left: 5px solid #e74c3c;
+        }
+
+        .severity.high {
+            border-left: 5px solid #f39c12;
+        }
+
+        .severity.medium {
+            border-left: 5px solid #3498db;
+        }
+
+        .severity.low {
+            border-left: 5px solid #2ecc71;
+        }
+
+        .severity.informational {
+            border-left: 5px solid #95a5a6;
+        }
+
+        .sample-section {
+            margin-bottom: 80px;
+        }
+
+        .sample-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .sample-report {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .report-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .report-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .report-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .report-section ul {
+            padding-left: 20px;
+        }
+
+        .report-section li {
+            margin-bottom: 8px;
+            color: var(--gray-color);
+        }
+
+        .cta-section {
+            text-align: center;
+            background-color: var(--light-color);
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .methodology-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .methodology-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .phase {
+                flex-direction: column;
+            }
+            
+            .phase-number {
+                min-width: 100%;
+                padding: 10px;
+            }
+            
+            .phase-details {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .sample-report {
+                grid-template-columns: 1fr;
+            }
+        }
