@@ -177,27 +177,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // FREE SCAN FORM HANDLING
     const scanForm = document.getElementById('scanForm');
     if (scanForm) {
-        scanForm.addEventListener('submit', function (e) {
-            // Let FormSubmit handle this - we're using their direct form action
+        scanForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = scanForm.querySelector('button');
+            const spinner = submitBtn.querySelector('.fa-spinner');
+            const buttonText = submitBtn.querySelector('.button-text');
+            const messageEl = document.getElementById('scan-message');
+
             // Show loading state
-            const submitBtn = scanForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<div class="loader"></div> Processing...';
-            
-            // If using custom submission handling (not FormSubmit), uncomment this:
-            /*
+            buttonText.textContent = 'Scanning...';
+            spinner.style.display = 'inline-block';
+            messageEl.style.display = 'none';
+
+            // Simulate scan process
             setTimeout(() => {
-                const messageEl = document.getElementById('scan-message');
-                if (messageEl) {
-                    messageEl.style.display = 'block';
-                    messageEl.className = 'form-message form-message-success';
-                    messageEl.innerHTML = 'Your contract has been submitted for scanning. Results will be emailed to you within 24 hours.';
-                }
-                
+                // Reset button
+                buttonText.textContent = 'Run Free Scan';
+                spinner.style.display = 'none';
+
+                // Show results
+                messageEl.style.display = 'block';
+                messageEl.className = 'form-message form-message-success';
+                messageEl.innerHTML = `
+                    Scan complete! Found 3 potential issues:
+                    <ul>
+                        <li>2 medium severity issues</li>
+                        <li>1 optimization opportunity</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary">Request Full Audit</a>
+                `;
+
                 scanForm.reset();
-                submitBtn.innerHTML = originalText;
-            }, 1500);
-            */
+            }, 3000);
         });
     }
 

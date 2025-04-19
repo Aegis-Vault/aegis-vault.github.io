@@ -749,7 +749,7 @@ footer {
 
 /* Free Scan Section */
 .free-scan {
-    background-color: var(--dark-color);
+    background: var(--dark-color);
     color: var(--light-color);
     padding: 100px 0;
 }
@@ -775,24 +775,35 @@ footer {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .scan-benefits i {
     color: var(--accent-color);
-    margin-right: 10px;
 }
 
-.scan-disclaimer {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-top: 20px;
-}
-
-.scan-form {
-    background: rgba(255, 255, 255, 0.03);
+.scan-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 2.5rem;
-    border-radius: 12px;
+    color: white;
+    font-family: monospace;
+}
+
+.scan-form button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fa-spinner {
+    display: none;
 }
 
 /* Enhanced Case Study Styling */
