@@ -82,17 +82,31 @@
                     <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
                 </div>
 
-                <form id="scanForm" class="scan-form">
+                <!-- Updated Form with Email Field -->
+                <form id="scanForm" 
+                      action="https://formsubmit.co/your@email.com" 
+                      method="POST"
+                      class="scan-form">
+                    
+                    <!-- Required FormSubmit Fields -->
+                    <input type="hidden" name="_subject" value="New Free Scan Request">
+                    <input type="hidden" name="_autoresponse" value="Thank you for submitting your contract! We'll review it and get back to you within 24 hours.">
+                    <input type="hidden" name="_next" value="https://yourdomain.com/#thanks">
+                    
                     <div class="form-group">
-                        <textarea 
-                            id="contractCode" 
-                            placeholder="Paste your contract code or GitHub repository URL" 
-                            rows="6"
-                            required
-                        ></textarea>
+                        <input type="email" 
+                               name="email"
+                               placeholder="Your email address" 
+                               required>
                     </div>
                     
-                    <div id="scan-message" class="form-message" style="display: none"></div>
+                    <div class="form-group">
+                        <textarea 
+                            name="contractCode"
+                            placeholder="Paste contract code or GitHub URL" 
+                            rows="6"
+                            required></textarea>
+                    </div>
                     
                     <button type="submit" class="btn primary">
                         <span class="button-text">Run Free Scan</span>

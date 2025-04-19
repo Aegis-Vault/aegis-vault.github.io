@@ -178,37 +178,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const scanForm = document.getElementById('scanForm');
     if (scanForm) {
         scanForm.addEventListener('submit', function(e) {
-            e.preventDefault();
             const submitBtn = scanForm.querySelector('button');
             const spinner = submitBtn.querySelector('.fa-spinner');
             const buttonText = submitBtn.querySelector('.button-text');
-            const messageEl = document.getElementById('scan-message');
-
+            
             // Show loading state
-            buttonText.textContent = 'Scanning...';
+            buttonText.textContent = 'Submitting...';
             spinner.style.display = 'inline-block';
-            messageEl.style.display = 'none';
-
-            // Simulate scan process
-            setTimeout(() => {
-                // Reset button
-                buttonText.textContent = 'Run Free Scan';
-                spinner.style.display = 'none';
-
-                // Show results
-                messageEl.style.display = 'block';
-                messageEl.className = 'form-message form-message-success';
-                messageEl.innerHTML = `
-                    Scan complete! Found 3 potential issues:
-                    <ul>
-                        <li>2 medium severity issues</li>
-                        <li>1 optimization opportunity</li>
-                    </ul>
-                    <a href="#contact" class="btn secondary">Request Full Audit</a>
-                `;
-
-                scanForm.reset();
-            }, 3000);
+            
+            // Let FormSubmit handle the actual submission
+            // Remove any simulated results code
         });
     }
 

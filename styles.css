@@ -782,6 +782,7 @@ footer {
     color: var(--accent-color);
 }
 
+.scan-form input,
 .scan-form textarea {
     width: 100%;
     padding: 15px;
