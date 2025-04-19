@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scanForm = document.getElementById('scanForm');
     if (scanForm) {
         scanForm.addEventListener('submit', function(e) {
-            const submitBtn = scanForm.querySelector('button');
+            const submitBtn = this.querySelector('button[type="submit"]');
             const spinner = submitBtn.querySelector('.fa-spinner');
             const buttonText = submitBtn.querySelector('.button-text');
             
@@ -186,8 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
             buttonText.textContent = 'Submitting...';
             spinner.style.display = 'inline-block';
             
-            // Let FormSubmit handle the actual submission
-            // Remove any simulated results code
+            // Let FormSubmit handle the submission
         });
     }
 

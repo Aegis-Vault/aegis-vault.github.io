@@ -82,17 +82,18 @@
                     <p class="scan-disclaimer">While this automated scan isn't a replacement for a full audit, it's a great starting point to identify potential issues.</p>
                 </div>
 
-                <!-- Updated Form with Email Field -->
+                <!-- Updated Form -->
                 <form id="scanForm" 
-                      action="https://formsubmit.co/your@email.com" 
+                      action="https://formsubmit.co/aegisvault1@gmail.com" 
                       method="POST"
                       class="scan-form">
                     
-                    <!-- Required FormSubmit Fields -->
+                    <!-- FormSubmit Configuration -->
                     <input type="hidden" name="_subject" value="New Free Scan Request">
                     <input type="hidden" name="_autoresponse" value="Thank you for submitting your contract! We'll review it and get back to you within 24 hours.">
-                    <input type="hidden" name="_next" value="https://yourdomain.com/#thanks">
+                    <input type="hidden" name="_next" value="https://aegis-vault.github.io/#thanks">
                     
+                    <!-- Email Input -->
                     <div class="form-group">
                         <input type="email" 
                                name="email"
@@ -100,9 +101,10 @@
                                required>
                     </div>
                     
+                    <!-- Contract Code/URL Input -->
                     <div class="form-group">
                         <textarea 
-                            name="contractCode"
+                            name="contract-code"
                             placeholder="Paste contract code or GitHub URL" 
                             rows="6"
                             required></textarea>
