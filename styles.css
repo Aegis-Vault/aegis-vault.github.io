@@ -948,6 +948,72 @@ footer {
     opacity: 0.9;
 }
 
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.testimonials .section-title {
+    font-family: 'Inter', sans-serif; /* Ensure consistent font */
+    font-size: 2.5rem;
+    font-weight: var(--font-semibold);
+    color: var(--light-color);
+    margin-bottom: 2rem;
+}
+
+.client-logos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.client-logos img {
+    height: 40px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.client-logos img:hover {
+    opacity: 1;
+}
+
+.testimonial-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.testimonial {
+    font-family: 'Inter', sans-serif; /* Ensure consistent font */
+    font-size: 1.1rem;
+    font-weight: var(--font-regular);
+    line-height: 1.6;
+    color: var(--light-color);
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.testimonial blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin: 0 auto 1.5rem;
+    max-width: 700px;
+    line-height: 1.6;
+    color: var(--light-color);
+}
+
 /* Thank you section */
 .thank-you-section {
     background-color: var(--light-color);

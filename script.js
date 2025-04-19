@@ -74,14 +74,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Testimonial Carousel
-    let currentTestimonial = 0;
     const testimonials = document.querySelectorAll('.testimonial');
-    
-    setInterval(() => {
+    let currentTestimonial = 0;
+
+    function showNextTestimonial() {
         testimonials[currentTestimonial].classList.remove('active');
         currentTestimonial = (currentTestimonial + 1) % testimonials.length;
         testimonials[currentTestimonial].classList.add('active');
-    }, 5000);
+    }
+
+    setInterval(showNextTestimonial, 5000); // Change testimonial every 5 seconds
 
     const dots = document.querySelectorAll('.carousel-dot');
     dots.forEach((dot, index) => {
