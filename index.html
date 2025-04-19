@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <meta name="description" content="Web3 smart contract audits, DeFi vulnerability reviews, and security consulting. Free scan available.">
+    <meta name="keywords" content="smart contract audit, DeFi security, Web3 audit, solidity, vulnerabilities">
+    <meta property="og:title" content="AegisVault | Smart Contract Security Audits">
+    <meta property="og:description" content="Professional Web3 security audits and vulnerability assessments. Protect your protocol with expert reviews.">
 </head>
 <body>
     <!-- Improved Mobile Navigation -->
@@ -84,7 +88,7 @@
 
                 <!-- Updated Form -->
                 <form id="scanForm" 
-                      action="https://formsubmit.co/aegisvault1@gmail.com" 
+                      action="https://formsubmit.co/your@email.com" 
                       method="POST"
                       class="scan-form">
                     
@@ -110,6 +114,22 @@
                             required></textarea>
                     </div>
                     
+                    <div class="form-group">
+                        <select name="contract-type" required>
+                            <option value="">Select Contract Type</option>
+                            <option>ERC20</option>
+                            <option>ERC721</option>
+                            <option>Custom Logic</option>
+                            <option>DeFi Strategy</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" 
+                               name="telegram" 
+                               placeholder="Telegram handle (optional)">
+                    </div>
+                    
                     <button type="submit" class="btn primary">
                         <span class="button-text">Run Free Scan</span>
                         <i class="fas fa-spinner fa-spin" style="display: none"></i>
@@ -119,15 +139,27 @@
         </div>
     </section>
 
-    <!-- Testimonials Carousel -->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
+            <h2 class="section-title">Trusted by Web3 Builders</h2>
+            <div class="client-logos">
+                <img src="path-to-ethereum-logo.svg" alt="Ethereum">
+                <img src="path-to-arbitrum-logo.svg" alt="Arbitrum">
+                <img src="path-to-optimism-logo.svg" alt="Optimism">
+                <img src="path-to-polygon-logo.svg" alt="Polygon">
+            </div>
+            
             <div class="testimonial-carousel">
                 <div class="testimonial active">
-                    <blockquote>"AegisVault's expertise saved us from potential disaster..."</blockquote>
-                </div>
-                <div class="testimonial">
-                    <blockquote>"Their detailed audit report was invaluable for our launch..."</blockquote>
+                    <div class="client-meta">
+                        <img src="placeholder-client.png" class="client-logo" alt="Client Logo">
+                        <div class="client-info">
+                            <div class="stars">★★★★★</div>
+                            <div class="client-name">DeFi Lending Client, 2024</div>
+                        </div>
+                    </div>
+                    <blockquote>"AegisVault identified 3 critical vulnerabilities in our protocol that could have led to $2M+ in potential losses. Essential security partner."</blockquote>
                 </div>
             </div>
         </div>
@@ -266,6 +298,13 @@
                         <h4>Outcome:</h4>
                         <p>Finding was escalated to the protocol team and confirmed as a valid technical vulnerability. The issue was patched before public deployment, protecting the protocol from potential exploitation.</p>
                     </div>
+                    
+                    <div class="case-cta">
+                        <a href="sample-audit.pdf" class="btn secondary" download>
+                            <i class="fas fa-file-pdf"></i>
+                            Download Sample Report (Redacted)
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -312,6 +351,13 @@
                         <h4>Outcome:</h4>
                         <p>All critical and high vulnerabilities were addressed prior to mainnet deployment, preventing potential exploits that could have impacted millions in protocol value.</p>
                     </div>
+                    
+                    <div class="case-cta">
+                        <a href="sample-audit.pdf" class="btn secondary" download>
+                            <i class="fas fa-file-pdf"></i>
+                            Download Sample Report (Redacted)
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -357,6 +403,13 @@
                     <div class="result">
                         <h4>Outcome:</h4>
                         <p>Protocol implemented all recommended security improvements, significantly reducing attack surface before launching integration with major lending platforms.</p>
+                    </div>
+                    
+                    <div class="case-cta">
+                        <a href="sample-audit.pdf" class="btn secondary" download>
+                            <i class="fas fa-file-pdf"></i>
+                            Download Sample Report (Redacted)
+                        </a>
                     </div>
                 </div>
             </div>

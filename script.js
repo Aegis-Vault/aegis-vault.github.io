@@ -248,6 +248,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     addMessage('Hello! I\'m your AegisVault security assistant. How can I help you with smart contract security today?', 'server');
                 }
             }, 3000);
+
+            // Auto-message after 3 seconds
+            setTimeout(() => {
+                if (!hasUserMessage) {
+                    addMessage("Hey 👋 Need a quick security assessment? I can review basic contract risks for free.", 'server');
+                }
+            }, 3000);
             
         } catch (err) {
             console.error('Chat initialization error:', err);
