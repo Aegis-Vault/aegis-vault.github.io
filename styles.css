@@ -6,16 +6,12 @@
     --secondary-color: #2a075f; /* Rich purple */
     --accent-color: #ff1a75;   /* Distinctive pink */
     --dark-color: #1a1b25;
-    --dark-secondary: #252736; /* Slightly lighter dark for contrast */
-    --dark-tertiary: #2e3048;  /* Even lighter for card backgrounds */
+    --darker-color: #151523;   /* Slightly darker for depth */
     --light-color: #f8f9fa;
-    --gray-color: #a0a0b0;     /* Adjusted for dark mode */
+    --gray-color: #a0a0b0;     /* Soft gray for dark mode */
     --success-color: #2ecc71;
     --warning-color: #f39c12;
     --danger-color: #e74c3c;
-
-    --dark-gradient: linear-gradient(145deg, #0a081c 0%, #1a1b25 100%);
-    --neon-glow: 0 0 15px rgba(67, 97, 238, 0.3);
 
     --font-light: 300;
     --font-regular: 400;
@@ -34,14 +30,17 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Background pattern styles */
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--light-color);
-    background-color: var(--dark-color);
+    background-color: var(--darker-color);
+    /* Beautiful subtle pattern for dark theme */
     background-image: 
-        linear-gradient(to bottom, rgba(10, 8, 28, 0.95), rgba(26, 27, 37, 0.95)),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233f4173' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        radial-gradient(circle at 100% 50%, rgba(67, 97, 238, 0.03) 0%, transparent 25%),
+        radial-gradient(circle at 0% 80%, rgba(255, 26, 117, 0.03) 0%, transparent 35%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233f4173' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
 }
 
@@ -54,7 +53,7 @@ body {
 
 /* Navigation */
 nav {
-    background-color: rgba(10, 8, 28, 0.95);
+    background-color: rgba(21, 21, 35, 0.8);
     padding: 20px 0;
     position: fixed;
     width: 100%;
@@ -110,12 +109,13 @@ nav .container {
     transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* Special gradient for the hero section */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, var(--dark-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, rgba(26, 27, 37, 0.9) 0%, rgba(42, 7, 95, 0.9) 100%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233f4173' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     color: var(--light-color);
     padding-top: 80px;
 }
@@ -201,9 +201,9 @@ section {
     background-color: var(--accent-color);
 }
 
-/* Security Dashboard */
+/* Dashboard with glass effect */
 .security-dashboard {
-    background-color: rgba(10, 8, 28, 0.6);
+    background-color: rgba(10, 8, 28, 0.8);
     padding: 60px 0;
     margin-top: -20px;
     position: relative;
@@ -219,18 +219,20 @@ section {
 }
 
 .dashboard-card {
-    background-color: rgba(25, 26, 45, 0.5);
+    background-color: rgba(21, 21, 35, 0.6);
     padding: 30px 20px;
     border-radius: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .dashboard-card:hover {
     transform: translateY(-10px);
     background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .dashboard-number {
@@ -295,11 +297,12 @@ section {
 }
 
 .scan-form {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(21, 21, 35, 0.6);
     padding: 40px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
 }
 
 .scan-form input,
@@ -327,6 +330,49 @@ section {
     justify-content: center;
 }
 
+/* Section background variations */
+.services,
+.resources,
+.contact {
+    position: relative;
+    background-color: rgba(21, 21, 35, 0.7);
+}
+
+.services::before,
+.resources::before,
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233f4173' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: -1;
+}
+
+/* Card styling - make them slightly transparent with blurred backdrop */
+.service-card,
+.resource-card,
+.case-study,
+.portfolio-cta,
+.contact-form,
+.contact-info {
+    background-color: rgba(21, 21, 35, 0.6);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover,
+.resource-card:hover,
+.case-study:hover,
+.portfolio-cta:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
 /* Services Section */
 .services {
     background-color: var(--dark-color);
@@ -339,10 +385,10 @@ section {
 }
 
 .service-card {
-    background-color: var(--dark-tertiary);
+    background-color: rgba(21, 21, 35, 0.6);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -360,8 +406,8 @@ section {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -390,7 +436,8 @@ section {
         right: -100%;
         top: 70px;
         height: calc(100vh - 70px);
-        background-color: var(--dark-color);
+        background-color: rgba(21, 21, 35, 0.95);
+        backdrop-filter: blur(10px);
         display: flex;
         flex-direction: column;
         align-items: center;
