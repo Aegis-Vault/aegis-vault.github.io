@@ -30,25 +30,20 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Background pattern styles */
+/* Base background - dark with subtle pattern */
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--light-color);
-    background-color: var(--darker-color);
-    /* Beautiful subtle pattern for dark theme */
-    background-image: 
-        radial-gradient(circle at 100% 50%, rgba(67, 97, 238, 0.03) 0%, transparent 25%),
-        radial-gradient(circle at 0% 80%, rgba(255, 26, 117, 0.03) 0%, transparent 35%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233f4173' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    background-attachment: fixed;
+    background-color: #151523;
+    background-image: linear-gradient(to bottom, rgba(26, 27, 37, 0.97), rgba(21, 21, 35, 0.97));
 }
 
 .container {
-    width: 90%;
     max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0;
 }
 
 /* Navigation */
@@ -178,7 +173,7 @@ nav .container {
 
 /* Section Styles */
 section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .section-title {
@@ -203,7 +198,7 @@ section {
 
 /* Dashboard with glass effect */
 .security-dashboard {
-    background-color: rgba(10, 8, 28, 0.8);
+    background-color: transparent;
     padding: 60px 0;
     margin-top: -20px;
     position: relative;
@@ -214,18 +209,18 @@ section {
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 20px;
     text-align: center;
 }
 
 .dashboard-card {
-    background-color: rgba(21, 21, 35, 0.6);
-    padding: 30px 20px;
-    border-radius: 10px;
+    background-color: rgba(30, 30, 45, 0.4);
+    padding: 25px 20px;
+    border-radius: 8px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(67, 97, 238, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-card:hover {
@@ -236,9 +231,8 @@ section {
 }
 
 .dashboard-number {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -255,7 +249,7 @@ section {
 
 /* Free Scan Section */
 .free-scan {
-    background-color: var(--dark-secondary);
+    background-color: transparent;
     color: var(--light-color);
     padding: 100px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -296,11 +290,12 @@ section {
     margin-top: 20px;
 }
 
+/* Fix for form elements */
 .scan-form {
-    background-color: rgba(21, 21, 35, 0.6);
-    padding: 40px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(30, 30, 45, 0.5);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(67, 97, 238, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(5px);
 }
@@ -309,18 +304,17 @@ section {
 .scan-form textarea,
 .scan-form select {
     width: 100%;
-    padding: 12px 15px;
+    padding: 10px 15px;
     margin-bottom: 15px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(15, 15, 25, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--light-color);
-    font-family: inherit;
 }
 
 .scan-form input::placeholder,
 .scan-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .scan-form button {
@@ -335,7 +329,7 @@ section {
 .resources,
 .contact {
     position: relative;
-    background-color: rgba(21, 21, 35, 0.7);
+    background-color: transparent;
 }
 
 .services::before,
@@ -357,11 +351,13 @@ section {
 .case-study,
 .portfolio-cta,
 .contact-form,
-.contact-info {
-    background-color: rgba(21, 21, 35, 0.6);
+.contact-info,
+.dashboard-card {
+    background-color: rgba(30, 30, 45, 0.4);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(67, 97, 238, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .service-card:hover,
@@ -375,24 +371,23 @@ section {
 
 /* Services Section */
 .services {
-    background-color: var(--dark-color);
+    background-color: transparent;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 20px;
 }
 
 .service-card {
-    background-color: rgba(21, 21, 35, 0.6);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 25px;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(67, 97, 238, 0.1);
 }
 
 .service-card::before {
@@ -400,7 +395,7 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    width: 5px;
+    width: 4px;
     height: 100%;
     background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
 }
@@ -412,21 +407,84 @@ section {
 }
 
 .service-icon {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
 .service-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
     color: var(--light-color);
 }
 
 .service-card p {
     margin-bottom: 20px;
     color: var(--gray-color);
+}
+
+.deliverables {
+    margin: 15px 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.deliverables h4 {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--light-color);
+    opacity: 0.9;
+}
+
+/* Portfolio section fixes */
+.portfolio {
+    background-color: #151523;
+}
+
+.case-study {
+    margin-bottom: 30px;
+    border-left: 4px solid var(--primary-color);
+    background-color: rgba(30, 30, 45, 0.4);
+    padding: 0;
+}
+
+.case-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 20px 25px;
+}
+
+.case-content {
+    padding: 25px;
+}
+
+.finding {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Fix for resources section */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.resource-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px;
+}
+
+.resource-card p {
+    flex-grow: 1;
+    margin-bottom: 20px;
 }
 
 /* Responsive Design */
