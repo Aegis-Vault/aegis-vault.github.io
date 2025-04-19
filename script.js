@@ -83,6 +83,17 @@ document.addEventListener('DOMContentLoaded', () => {
         testimonials[currentTestimonial].classList.add('active');
     }, 5000);
 
+    const dots = document.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            testimonials[currentTestimonial].classList.remove('active');
+            dots[currentTestimonial].classList.remove('active');
+            currentTestimonial = index;
+            testimonials[currentTestimonial].classList.add('active');
+            dots[currentTestimonial].classList.add('active');
+        });
+    });
+
     // Initialize Animations
     AOS.init({
         duration: 1000,
@@ -188,6 +199,24 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Let FormSubmit handle the submission
         });
+
+        scanForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress-bar';
+            document.body.appendChild(progressBar);
+
+            // Simulate progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = `${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    progressBar.remove();
+                }
+            }, 300);
+        });
     }
 
     // Check for #thanks in URL and show thank you section
@@ -225,6 +254,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Connection status messages
             socket.on('connect', () => {
                 addMessage('Connected to AegisVault support. How can we help with your smart contract security needs?', 'server');
+                document.getElementById('connection-status').classList.add('connected');
+                document.getElementById('connection-status').textContent = 'Connected';
             });
             
             socket.on('connect_error', () => {
@@ -235,11 +266,18 @@ document.addEventListener('DOMContentLoaded', () => {
             socket.on('disconnect', () => {
                 addMessage('Disconnected from chat. Attempting to reconnect...', 'system');
                 console.log('Socket disconnected');
+                document.getElementById('connection-status').classList.remove('connected');
+                document.getElementById('connection-status').textContent = 'Disconnected';
             });
             
             // Receive messages
             socket.on('chat_message', (msg) => {
                 addMessage(msg, 'server');
+            });
+
+            // Typing indicator
+            socket.on('typing', () => {
+                addMessage('AegisVault is typing...', 'system');
             });
             
             // Fallback server demo response (in case the server doesn't respond)
@@ -369,4 +407,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize stats fetching
     fetchLiveStats();
+
+    // Email Validation
+    const emailInput = document.querySelector('input[name="email"]');
+    emailInput.addEventListener('input', () => {
+        if (!emailInput.value.includes('@')) {
+            emailInput.setCustomValidity('Please enter a valid email address.');
+        } else {
+            emailInput.setCustomValidity('');
+        }
+    });
+
+    // Vulnerability Chart
+    const ctx = document.getElementById('vulnerabilityChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Critical', 'High', 'Medium', 'Low'],
+            datasets: [{
+                data: [23, 45, 67, 12],
+                backgroundColor: ['#ff4d4d', '#ffcc00', '#66ccff', '#99ff99']
+            }]
+        }
+    });
+
+    // Dark Mode Toggle
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
 });

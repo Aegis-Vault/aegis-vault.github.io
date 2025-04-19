@@ -11,6 +11,19 @@
     <meta name="keywords" content="smart contract audit, DeFi security, Web3 audit, solidity, vulnerabilities">
     <meta property="og:title" content="AegisVault | Smart Contract Security Audits">
     <meta property="og:description" content="Professional Web3 security audits and vulnerability assessments. Protect your protocol with expert reviews.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AegisVault",
+        "url": "https://aegis-vault.github.io",
+        "logo": "https://aegis-vault.github.io/logo.png",
+        "sameAs": [
+            "https://twitter.com/aegisvault",
+            "https://linkedin.com/company/aegisvault"
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Improved Mobile Navigation -->
@@ -160,6 +173,11 @@
                         </div>
                     </div>
                     <blockquote>"AegisVault identified 3 critical vulnerabilities in our protocol that could have led to $2M+ in potential losses. Essential security partner."</blockquote>
+                </div>
+                <div class="testimonial">...</div>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
                 </div>
             </div>
         </div>
@@ -432,15 +450,27 @@
         <div id="chat" class="chat-container">
             <div class="chat-header">
                 <span>AegisVault Support</span>
+                <span id="connection-status" class="status connected">Connected</span>
                 <button id="chat-close"><i class="fas fa-times"></i></button>
             </div>
             <div id="chatBox" class="chat-box"></div>
             <form id="chatForm">
                 <input type="text" id="messageInput" placeholder="Ask about smart contract security..." required>
+                <input type="file" id="fileUpload" accept=".sol,.txt,.zip">
                 <button type="submit" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
             </form>
         </div>
+        <button aria-label="Open chat">Chat</button>
     </div>
+
+    <!-- Vulnerability Chart -->
+    <canvas id="vulnerabilityChart" width="400" height="400"></canvas>
+
+    <!-- Lazy Loaded Image -->
+    <img src="path-to-image.jpg" loading="lazy" alt="Description">
+
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle">Toggle Dark Mode</button>
 
     <!-- Footer -->
     <footer>
